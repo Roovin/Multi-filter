@@ -64,12 +64,25 @@ if(header) {
         })
     }
 
+    function searchBoxfacet () {
+        const searchWrap = document.querySelector('header .main-nav .top-nav .search-wrap');
+        const searchBox = document.querySelector('header .search-box-wrap');
+        const crossBtn = document.querySelector('header .search-box-wrap .cross-btn');
+        searchWrap.addEventListener('click', function () {
+            searchBox.classList.add('show-header');
+        })
+        crossBtn.addEventListener('click', function () {
+            searchBox.classList.remove('show-header');
+        })
+
+    }
 
     document.addEventListener('DOMContentLoaded', function () {
         var winWidth = window.innerWidth;
         init(winWidth);
         humburger(winWidth);
-        mobileNavOpen(winWidth);
+        // mobileNavOpen(winWidth);
+        searchBoxfacet();
     });
 
     // window.addEventListener('resize', function () {
