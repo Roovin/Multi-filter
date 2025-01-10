@@ -3,18 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="filter py-[50px]">
+    <header class="header">
+        <div class="headerWrap">
+            <div class="container">
+                <div class="wrap">
+                    <div class="logo-wrap">
+                        <a href="/" class="emptyLink">.</a>
+                        <img src="images/header/logo.png" alt="Logo">
+                    </div>
+                    <div class="main-nav">
+                        <div class="row">
+                            <div class="top-nav">
+                                <ul>
+                                    <li>
+                                        <div class="search-wrap">
+                                            <p>Search</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#">News</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Careers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Partner With Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <nav>
+                                <ul>
+                                    <li class="arrow">
+                                        <a href="#" >About Us</a>
+                                        <div class="subMenu">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Our History</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Our Leadership</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Our Core Values</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Compliance and ESG</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="arrow">
+                                        <a href="#">Our Business</a>
+                                        <div class="subMenu">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Young Dental</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Young Specialties</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Young Surgical</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#">Our Brands</a>
+                                    </li>
+                                    <li class="arrow">
+                                        <a href="#" >Education</a>
+                                        <div class="subMenu">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Live CE Webinars</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">On-Demand CE</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Event and Group CE</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Training & Demos</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Access Your Account</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="arrow">
+                                        <a href="#">Resources</a>
+                                        <div class="subMenu last">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Blog Articles</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Product Resources</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Quarterly Promotions</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="humburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="hero-banner">
+        <div class="bg-img">
+            <img src="images/clear-citrix-full-1.png" alt="Hero Banner">
+        </div>
+    </section>
+    <section class="blogs">
         <div class="container">
-            <div class="intro text-center">
-                <h2>Start Filter</h2>
+            <div class="filterListWrap">
+                <p>Filter Type:- </p>
+                <div class="filter_wrap">
+                    <p>Content Type</p>
+                    <span class="arrow"></span>
+                    <ul class="list">
+                        <li>
+                            <p>Demo</p>
+                        </li>
+                        <li>
+                            <p>Ebook</p>
+                        </li>
+                        <li>
+                            <p>Infographic</p>
+                        </li>
+                        <li>
+                            <p>Index Report</p>
+                        </li>
+                        <li>
+                            <p>Onpager</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-wrapper">
+                <div class="card">
+                    <a href="/" class="emptyLink">.</a>
+                    <div class="wrap">
+                        <h4>Data</h4>
+                        <p>Lorem ipsum dolor sit.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="/" class="emptyLink">.</a>
+                    <div class="wrap">
+                        <h4>Data</h4>
+                        <p>Lorem ipsum dolor sit.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="/" class="emptyLink">.</a>
+                    <div class="wrap">
+                        <h4>Data</h4>
+                        <p>Lorem ipsum dolor sit.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
+    
+    <script src="index.js"></script>
 </body>
-<script src="filter.js"></script>
 </html>
