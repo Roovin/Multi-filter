@@ -395,29 +395,24 @@ header .subMenu {
   position: absolute;
   top: 40px;
   width: 220px;
-  height: auto;
-  padding: 20px 10px;
-  opacity: 0;
-  display: none;
-  visibility: hidden;
+  height: 0;
+  opacity: 1;
+  visibility: visible;
   background: white;
+  overflow: hidden;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
   z-index: 9;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
 }
 @media (max-width: 991px) {
   header .subMenu {
     position: relative;
     top: 0;
     width: 100%;
-    height: auto;
-    max-height: 0;
-    opacity: 0;
-    visibility: hidden;
+    height: 0;
     display: block;
-    padding: 0 10px;
     box-shadow: none;
-    transition: all 0.5s ease-in-out;
+    overflow: hidden;
   }
 }
 header .subMenu.last {
@@ -429,19 +424,7 @@ header .subMenu.last {
   }
 }
 header .subMenu.active {
-  opacity: 1;
-  display: block;
-  visibility: visible;
-}
-@media (max-width: 991px) {
-  header .subMenu.active {
-    max-height: 100rem;
-  }
-}
-@media (max-width: 991px) and (max-width: 991px) {
-  header .subMenu.active:last-child ul {
-    padding: 0 0 20px;
-  }
+  height: auto;
 }
 @media (max-width: 991px) {
   header .subMenu.active:last-child ul li {
@@ -460,21 +443,28 @@ header .subMenu.active {
     margin-bottom: 0;
   }
 }
-header .subMenu ul {
+header .subMenu > ul {
   display: block !important;
+  padding: 20px 10px;
 }
-header .subMenu ul li {
+@media (max-width: 991px) {
+  header .subMenu > ul {
+    padding: 0 0 10px 10px;
+    border: unset;
+  }
+}
+header .subMenu > ul li {
   margin-right: 0 !important;
 }
-header .subMenu ul li a {
+header .subMenu > ul li a {
   color: #001480;
   font-size: 18px;
   transition: all 0.3s ease-in-out;
 }
-header .subMenu ul li a:hover {
+header .subMenu > ul li a:hover {
   color: #0084f2 !important;
 }
-header .subMenu ul li:last-child {
+header .subMenu > ul li:last-child {
   padding-bottom: 0;
 }
 

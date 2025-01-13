@@ -5,7 +5,6 @@ if(header) {
     const navLi = document.querySelectorAll('header .main-nav nav > ul > li');
     function init(winWidth) {
         if(navLi) {
-            console.log(winWidth);
             if(winWidth > 991) {
                 navLi.forEach((element) => {
                     element.addEventListener('mouseenter', function () {
@@ -25,20 +24,33 @@ if(header) {
                 })
             } else {
                 navLi.forEach((element) => {
+                    const subList  = element.querySelector('.subMenu');
+                    if(subList) {
+                        const subUlList = subList.querySelector('ul').offsetHeight;
+                        subList.style.height = `0px`;
+                    }
                     element.addEventListener("click", function () {
                         if(this.classList.contains('rotate')) {
                             this.classList.remove('rotate');
                             const subMenuAdd = this.querySelector('.subMenu');
                             if (subMenuAdd ) subMenuAdd.classList.remove('active');
+                                subMenuAdd.style.height = `0px`
                         } else {
                             navLi.forEach((item) => {
                                 item.classList.remove('rotate');
                              const subMenuWrap = item.querySelector('.subMenu');
-                             if (subMenuWrap ) subMenuWrap.classList.remove('active');
+
+                             if (subMenuWrap ) {
+                                 subMenuWrap.classList.remove('active'); 
+                                 subMenuWrap.style.height = `0px`;
+                             }
                             })
-                           const subMenuAdd = this.querySelector('.subMenu');
+                            const subMenuAdd = this.querySelector('.subMenu');
+                           
                            if (subMenuAdd ) subMenuAdd.classList.add('active');
                            this.classList.add('rotate')
+                           const listHeight = subMenuAdd.querySelector('ul').offsetHeight;
+                            subMenuAdd.style.height = `${listHeight}px`
                         }
                     })
                 });
@@ -50,7 +62,6 @@ if(header) {
         const humBurger = document.querySelector('header .main-nav .humburger');
         humBurger.addEventListener('click', function () {
           if(winWidth < 991) {
-            console.log(winWidth);
               const paraElem = this.parentElement;
               const mobileNav = paraElem.querySelector('.row');
               if(this.classList.contains('active')) {

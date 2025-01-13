@@ -237,7 +237,7 @@ header {
                         display: block;
                         padding: 0 20px 0;
                     }
-                    li {
+                  li {
                         position: relative;
                         margin-right: 60px;
                         padding-bottom: 20px;
@@ -424,27 +424,29 @@ header {
         position: absolute;
         top: 40px;
         width: 220px;
-        height: auto;
-        padding: 20px 10px;
-        opacity: 0;
-        display: none;
-        visibility: hidden;
+        height: 0;
+        
+        opacity: 1;
+        // display: none;
+        visibility: visible;
         background: white;
+        overflow: hidden;
         box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
         z-index: 9;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease;
         @media (max-width: 991px) { 
             position: relative;
             top: 0;
             width: 100%;
-            height: auto;
-            max-height: 0;
-            opacity: 0;
-            visibility: hidden;
+            height: 0;
+            // max-height: 0;
+            // opacity: 0;
+            // visibility: hidden;
             display: block;
-            padding: 0 10px;
+            // padding: 0 10px;
             box-shadow: none;
-            transition: all 0.5s ease-in-out;
+            overflow: hidden;
+            // transition: all 0.5s ease-in-out;
         }
         &.last {
             left: -30px;
@@ -453,16 +455,17 @@ header {
             }
         }
         &.active {
-            opacity: 1;
-            display: block;
-            visibility: visible;
+            // opacity: 1;
+            // display: block;
+            height: auto;
+            // height: 300px;
+            // visibility: visible;
             @media (max-width: 991px) {
-                max-height: 100rem;
+                // max-height: 100rem;
+                // height: auto;
+
                 &:last-child {
                     ul {
-                        @media (max-width: 991px) {
-                            padding: 0 0 20px;
-                        }
                         li {
                             margin-bottom: 15px;
                             @media (max-width: 991px) {
@@ -478,8 +481,13 @@ header {
                 }
             }
         }
-        ul {
+        > ul {
             display: block !important;
+            padding: 20px 10px;
+            @media (max-width: 991px) {
+                padding: 0 0 10px 10px;
+                border: unset;
+            }
             li {
                 margin-right: 0 !important;
                 a {
