@@ -68,75 +68,82 @@ if(header) {
             humBurger.addEventListener('click', function () {
                     const paraElem = this.parentElement;
                     const mobileNav = paraElem.querySelector('.row');
+                    const searchBox = document.querySelector('header .search-box-wrap');
                     if(this.classList.contains('active')) {
                         this.classList.remove('active');
                         mobileNav.classList.remove('mobileHeaderShow');
                     } else {
+                        if(searchBox.classList.contains('show-search')) {
+                            searchBox.classList.remove('show-search');
+                            searchBox.style.top = '-100%';
+                        }
                         this.classList.add('active');
                         mobileNav.classList.add('mobileHeaderShow');
-                        console.log(this);
                     }
             })
         }
     }
 
-    // function searchBoxfacet (winWidth) {
-    //     // Desktop Search box open 
-    //     const searchWrap = document.querySelector('header .main-nav .top-nav .search-wrap');
-    //     const searchBox = document.querySelector('header .search-box-wrap');
-    //     const crossBtn = document.querySelector('header .search-box-wrap .cross-btn');
-        
-    //     if(winWidth > 991) {
-    //         if(searchWrap) {
-    //             searchWrap.addEventListener('click', function () {
-    //                 const headrHeight = header.offsetHeight;
-    //                 searchBox.style.top = `${headrHeight}px`;
-    //                 searchBox.classList.add('show-search');
-    //             })
-    //             crossBtn.addEventListener('click', function () {
-    //                 searchBox.style.top = '-100%'; 
-    //                 searchBox.classList.remove('show-search');
-    //             })
-    //         } 
-    //     } else {
-    //         // Mobile Search box open
-    //         const searchMobileWrap = document.querySelector('header .main-nav .mobileSearch');
-    //         if(searchMobileWrap) {
-    //             searchMobileWrap.addEventListener('click', function () {
-    //                 const headrHeight = header.offsetHeight;
-    //                 searchBox.style.top = `${headrHeight}px`;
-    //                 searchBox.classList.add('show-search');
-    //             })
-    //             crossBtn.addEventListener('click', function () {
-    //                 searchBox.style.top = '-100%'; 
-    //                 searchBox.classList.remove('show-search');
-    //             })
-    //         }
-    //     }
-    // }
-
-    function searchBoxfacet(winWidth) {
+    function searchBoxfacet (winWidth) {
+        // Desktop Search box open
+        const searchWrap = document.querySelector('header .main-nav .top-nav .search-wrap');
         const searchBox = document.querySelector('header .search-box-wrap');
         const crossBtn = document.querySelector('header .search-box-wrap .cross-btn');
-        const searchWrap = winWidth > 991 
-            ? document.querySelector('header .main-nav .top-nav .search-wrap') 
-            : document.querySelector('header .main-nav .mobileSearch');
-    
-        if (searchWrap && searchBox && crossBtn) {
-            const toggleSearch = (show) => {
-                const headerHeight = header.offsetHeight;
-                searchBox.style.top = show ? `${headerHeight}px` : '-100%';
-                searchBox.classList.toggle('show-search', show);
-            };
-    
-            searchWrap.addEventListener('click', () => toggleSearch(true));
-            crossBtn.addEventListener('click', () => toggleSearch(false));
+        const humBurger = document.querySelector('header .main-nav .humburger');
+        if(winWidth > 991) {
+            if(searchWrap) {
+                searchWrap.addEventListener('click', function () {
+                    const headrHeight = header.offsetHeight;
+                    searchBox.style.top = `${headrHeight}px`;
+                    searchBox.classList.add('show-search');
+                })
+                crossBtn.addEventListener('click', function () {
+                    searchBox.style.top = '-100%';
+                    searchBox.classList.remove('show-search');
+                })
+            } 
+        } else {
+            // Mobile Search box open
+            const searchMobileWrap = document.querySelector('header .main-nav .mobileSearch');
+            const paraElem = searchMobileWrap.parentElement;
+            const mobileNav = paraElem.querySelector('.row');
+            if(searchMobileWrap) {
+                searchMobileWrap.addEventListener('click', function () {
+                    if(humBurger.classList.contains('active')) {
+                        humBurger.classList.remove('active');
+                        mobileNav.classList.remove('mobileHeaderShow');
+                    }
+                    const headrHeight = header.offsetHeight;
+                    searchBox.style.top = `${headrHeight}px`;
+                    searchBox.classList.add('show-search');
+                })
+                crossBtn.addEventListener('click', function () {
+                    searchBox.style.top = '-100%';
+                    searchBox.classList.remove('show-search');
+                })
+            }
         }
     }
+
+    // function searchBoxfacet(winWidth) {
+    //     const searchBox = document.querySelector('header .search-box-wrap');
+    //     const crossBtn = document.querySelector('header .search-box-wrap .cross-btn');
+    //     const searchWrap = winWidth > 991 
+    //         ? document.querySelector('header .main-nav .top-nav .search-wrap') 
+    //         : document.querySelector('header .main-nav .mobileSearch');
     
-   
-
-
+    //     if (searchWrap && searchBox && crossBtn) {
+    //         const toggleSearch = (show) => {
+    //             const headerHeight = header.offsetHeight;
+    //             searchBox.style.top = show ? `${headerHeight}px` : '-100%';
+    //             searchBox.classList.toggle('show-search', show);
+    //         };
+    
+    //         searchWrap.addEventListener('click', () => toggleSearch(true));
+    //         crossBtn.addEventListener('click', () => toggleSearch(false));
+    //     }
+    // }
+    
     document.addEventListener('DOMContentLoaded', function () {
         var winWidth = window.innerWidth;
         init(winWidth);
