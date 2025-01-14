@@ -125,25 +125,6 @@ if(header) {
         }
     }
 
-    // function searchBoxfacet(winWidth) {
-    //     const searchBox = document.querySelector('header .search-box-wrap');
-    //     const crossBtn = document.querySelector('header .search-box-wrap .cross-btn');
-    //     const searchWrap = winWidth > 991 
-    //         ? document.querySelector('header .main-nav .top-nav .search-wrap') 
-    //         : document.querySelector('header .main-nav .mobileSearch');
-    
-    //     if (searchWrap && searchBox && crossBtn) {
-    //         const toggleSearch = (show) => {
-    //             const headerHeight = header.offsetHeight;
-    //             searchBox.style.top = show ? `${headerHeight}px` : '-100%';
-    //             searchBox.classList.toggle('show-search', show);
-    //         };
-    
-    //         searchWrap.addEventListener('click', () => toggleSearch(true));
-    //         crossBtn.addEventListener('click', () => toggleSearch(false));
-    //     }
-    // }
-    
     document.addEventListener('DOMContentLoaded', function () {
         var winWidth = window.innerWidth;
         init(winWidth);
