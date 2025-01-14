@@ -497,6 +497,11 @@ header .subMenu > ul li:last-child {
      object-fit: cover;
 }
 
+.blogs .filterWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 .blogs .filterListWrap {
   position: relative;
   display: flex;
@@ -522,10 +527,10 @@ header .subMenu > ul li:last-child {
   width: 14px;
   height: 8px;
   transform: translateY(-50%);
-  background: url("imges/dropDown.png") no-repeat;
+  background: url("images/dropDown.png") no-repeat;
   background-size: cover;
 }
-.blogs .filterListWrap .filter_wrap ul {
+.blogs .filterListWrap .filter_wrap .list-wrap {
   position: absolute;
   left: 0;
   top: 43px;
@@ -537,11 +542,29 @@ header .subMenu > ul li:last-child {
   background-color: white;
   list-style: none;
   box-shadow: 0 0 0 0 rgb(0, 0, 0);
+  z-index: 2;
+}
+.blogs .filterListWrap .filter_wrap .list-wrap.active {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}
+.blogs .filterListWrap .filter_wrap .list-wrap ul {
+  padding: 10px;
+}
+.blogs .filterListWrap .filter_wrap .list-wrap ul li {
+  padding: 0 0 10px;
+}
+.blogs .clear-btn {
+  margin-left: 10px;
+  cursor: pointer;
+  align-self: last baseline;
 }
 .blogs .card-wrapper {
   position: relative;
   margin-top: 50px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   width: calc(100% + 30px);
   flex: 0 0 calc(100% + 30px);
@@ -551,10 +574,11 @@ header .subMenu > ul li:last-child {
   position: relative;
   flex: 0 0 calc(33.33% - 30px);
   width: calc(33.33% - 30px);
-  margin: 0 15px;
+  margin: 0 15px 20px;
   padding: 10px 20px;
   border: solid 1px black;
   border-radius: 5px;
+  z-index: 1;
 }
 .blogs .card-wrapper .card h4 {
   font-size: 32px;

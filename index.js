@@ -141,5 +141,109 @@ if(header) {
         const humBurger = document.querySelector('header .main-nav .humburger');
     
     })
-      
+    
+}
+
+const blog = document.querySelector('.blogs')
+if(blog) {
+    
+
+    function blogList () {
+        const filterWrap = document.querySelector('.blogs .filterListWrap .filter_wrap p');
+        filterWrap.addEventListener('click', function () {
+            const listToggle = this.parentElement;
+            const list = listToggle.querySelector('.list-wrap');
+            if(list.classList.contains('active')) {
+                list.classList.remove('active')
+            } else {
+                list.classList.add('active')
+            }
+        })
+    }
+
+    async function getData () {
+        try {
+           const response = await fetch('json/data.json');
+            if (response.status != 200) {
+                throw new Error(`Response status: ${response.status}`);
+            }
+            const data = await response.json();
+            showList(data)
+            showData(data)
+            filterData(data)
+            clearBtn(data)
+            pagination(data)
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+    function showList (data) {
+        const listWrap = document.querySelector('.blogs .filterListWrap .filter_wrap .list');
+        const uniqueData = data.filter((obj, index, self) => 
+            index === self.findIndex((t) => t.title === obj.title)
+        )
+        uniqueData.forEach((element) => {
+            const listLi = `<li>
+                                <p>${element.content_type}</p>
+                            </li>`;
+            listWrap.innerHTML += listLi;
+        })
+    }   
+    function showData (data) {
+        let wholeData = [];
+        wholeData = data;
+        if(wholeData) {
+            const htmlWrap = document.querySelector('.blogs .card-wrapper');
+            htmlWrap.innerHTML = '';
+            wholeData.forEach((element) => {
+                const card = `<div class="card">
+                                <a href="/" class="emptyLink">.</a>
+                                <div class="wrap">
+                                    <h4>${element.title}</h4>
+                                    <p>${element.content}</p>
+                                </div>
+                            </div>`;
+
+                htmlWrap.innerHTML += card
+            })
+        }
+    }
+
+    function filterData (data) {
+        const listLi = document.querySelectorAll('.blogs .filterListWrap .filter_wrap ul.list li');
+        let pushdata = [];
+        let wholeData = [];
+        listLi.forEach((element) => {
+            element.addEventListener('click', function () {
+                pushdata = [];
+                const liVal = this.querySelector('p').innerText;
+                data.forEach((ele) => {
+                    if(ele.content_type === liVal) {
+                        pushdata.push(ele);
+                    }
+                })
+                wholeData = pushdata;
+                showData(wholeData)
+            })
+        })
+    }
+
+    function clearBtn (data) {
+        const clear = document.querySelector('.blogs .filterWrapper .clear-btn ');
+        if(clear) {
+            clear.addEventListener('click', function () {
+                showData(data);
+            })
+        }
+    }
+
+    function pagination (data) {
+        
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        blogList();
+        // fetchData();
+        getData();
+    })
 }
