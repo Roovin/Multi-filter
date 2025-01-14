@@ -238,12 +238,18 @@ if(blog) {
     }
 
     function pagination (data) {
-        
+       console.log(data);
+       let pageData = {
+        rows: 3,
+        postPerPage: 9,
+        currentPage: 1,
+
+       }
+       console.log(row);
     }
 
     document.addEventListener('DOMContentLoaded', function () {
         blogList();
-        // fetchData();
         getData();
     })
 }
