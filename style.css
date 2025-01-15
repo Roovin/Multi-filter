@@ -587,4 +587,22 @@ header .subMenu > ul li:last-child {
 .blogs .card-wrapper .card p {
   font-size: 20px;
   margin-top: 10px;
+}
+.blogs .pagination {
+  position: relative;
+  width: 100%;
+}
+.blogs .pagination .paginationList {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blogs .pagination .paginationList li {
+  margin: 0 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.blogs .pagination .paginationList li span {
+  display: inline-block;
 }/*# sourceMappingURL=style.css.map */

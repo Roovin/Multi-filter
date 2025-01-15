@@ -3,6 +3,7 @@ const header = document.querySelector('header');
 
 if(header) {
     const navLi = document.querySelectorAll('header .main-nav nav > ul > li');
+
     function init(winWidth) {
         if(navLi) {
             if(winWidth > 992) {
@@ -147,6 +148,11 @@ if(header) {
 const blog = document.querySelector('.blogs')
 if(blog) {
     
+    var obj = {
+        "page": 1,
+        "rows": 6,
+        "visible": 2
+    }
 
     function blogList () {
         const filterWrap = document.querySelector('.blogs .filterListWrap .filter_wrap p');
@@ -172,7 +178,6 @@ if(blog) {
             showData(data)
             filterData(data)
             clearBtn(data)
-            pagination(data)
         } catch (error) {
             console.error(error.message);
         }
@@ -192,6 +197,10 @@ if(blog) {
     function showData (data) {
         let wholeData = [];
         wholeData = data;
+        
+        var pageData = pagination(wholeData, obj.page, obj.rows);
+        wholeData = pageData.cardData;
+
         if(wholeData) {
             const htmlWrap = document.querySelector('.blogs .card-wrapper');
             htmlWrap.innerHTML = '';
@@ -237,19 +246,96 @@ if(blog) {
         }
     }
 
-    function pagination (data) {
-       console.log(data);
-       let pageData = {
-        rows: 3,
-        postPerPage: 9,
-        currentPage: 1,
+    function pagination (data, page, rows) {
+        const paginationWrap = document.querySelector('.blogs .pagination .paginationList')
+        var trimStart = (page - 1) * rows;
+        var trimEnd = trimStart + rows
+        var trimData = data.slice(trimStart, trimEnd)
+        var totalPages = Math.ceil(data.length / rows);
+        console.log(totalPages);
+        let active;
+        liTag = ''
+        
+        let beforePage = (page == 1) ? 1 : parseInt(page) - 2;
+        let afterPage = parseInt(page) + 2;
 
-       }
-       console.log(row);
+        if(page > 1) {
+            liTag += `<li class="page show-more prev first" value="first"><span>First</span></li> <li class="page show-more prev" value="prev"><span>Prev</span></li>`;
+        }
+        if (totalPages > 5) {
+            if (page > 3) {
+                liTag += `<li class="page dots"><span>...</span></li>`;
+            }
+        }
+
+        for(let plength = beforePage; plength <= afterPage; plength++) {
+        
+            if(plength > totalPages) {
+                continue;
+            }
+            if(plength == 0) {
+                plength = plength + 1;
+            }
+            if(page == plength) {
+                active = "active";
+            } else {
+                active = "";
+            }
+
+            liTag += `<li class="page numb ${active}" value="${plength}"><span>${plength}</span></li>`;
+        }
+
+        if(page < totalPages) {
+            liTag += `<li class="page show-more next" value="next"><span>Next</span></li> <li class="page show-more next last" value="last"><span>Last</span></li>`
+        }
+
+        paginationWrap.innerHTML = liTag;
+
+        if(totalPages <= 1) {
+            paginationWrap.innerHTML = '';
+        }
+
+        pageClickHandler(data, totalPages);
+
+        return {
+            "cardData" : trimData,
+            "pages" : totalPages
+        }
+    }
+
+    function pageClickHandler (data, totalPages) {
+        const paginationWrap = document.querySelectorAll('.blogs .pagination ul.paginationList');
+        const paginationLi = document.querySelectorAll('.blogs .pagination ul.paginationList li');
+        // console.log(paginationLi);
+        paginationLi.forEach(element => {
+            element.addEventListener('click', function () {
+                // console.log(this);
+                const pgValue = this.getAttribute('value');
+                
+                if(pgValue === 'prev') {
+                    // obj.page = (parseInt((obj.page) - 1))
+                    obj.page = obj.page - 1
+                } else if(pgValue == 'next') {
+                    // obj.page = (parseInt((obj.page) + 1))
+                    obj.page = obj.page + 1
+                } else if (pgValue == 'first') {
+                    obj.page = 1
+                } else if (pgValue == 'last') {
+                    obj.page = totalPages
+                } else {
+                    obj.page = pgValue
+                }
+
+                paginationWrap.innerHTML = '';
+                showData(data)
+
+            })
+        });
     }
 
     document.addEventListener('DOMContentLoaded', function () {
         blogList();
         getData();
+
     })
 }

@@ -569,4 +569,22 @@ header {
             }
         }
     }
+    .pagination {
+        position: relative;
+        width: 100%;
+        .paginationList {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            li {
+                margin: 0 10px;
+                font-size: 20px;
+                cursor: pointer;
+                span {
+                    display: inline-block;
+                }
+            }
+        }
+    }
 }
