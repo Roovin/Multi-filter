@@ -150,7 +150,7 @@ if(blog) {
     
     var obj = {
         "page": 1,
-        "rows": 6,
+        "rows": 2,
         "visible": 2
     }
 
@@ -252,21 +252,23 @@ if(blog) {
         var trimEnd = trimStart + rows
         var trimData = data.slice(trimStart, trimEnd)
         var totalPages = Math.ceil(data.length / rows);
-        console.log(totalPages);
+        // console.log(totalPages);
         let active;
         liTag = ''
         
-        let beforePage = (page == 1) ? 1 : parseInt(page) - 2;
+        let beforePage = (page == 1) ? 1 : parseInt(page) - 1;
         let afterPage = parseInt(page) + 2;
 
         if(page > 1) {
             liTag += `<li class="page show-more prev first" value="first"><span>First</span></li> <li class="page show-more prev" value="prev"><span>Prev</span></li>`;
         }
-        if (totalPages > 5) {
-            if (page > 3) {
+        if (totalPages > 4) {
+            if (page > 2) {
                 liTag += `<li class="page dots"><span>...</span></li>`;
             }
         }
+
+        console.log(afterPage);
 
         for(let plength = beforePage; plength <= afterPage; plength++) {
         
