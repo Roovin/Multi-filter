@@ -339,14 +339,12 @@ if(blog) {
         const mainList = this.querySelector('.blogs .filterListWrap .filter_wrap .list-wrap');
      
         if((e.target == listWrap) || (e.target == listWrapPar)) {
-          console.log('excute');
+          console.log('execute');
         } else {
             if(mainList.classList.contains('active')) {
                 mainList.classList.remove('active')
             }
         }
-        // if()
-        // console.log(targetClass);
     })
 
     document.addEventListener('DOMContentLoaded', function () {

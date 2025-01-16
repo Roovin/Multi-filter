@@ -486,6 +486,11 @@ header .subMenu > ul li:last-child {
   padding: 0;
   height: 700px;
 }
+@media (min-width: 768px) and (max-width: 1200px) {
+  .hero-banner {
+    height: 500px;
+  }
+}
 @media (max-width: 595px) {
   .hero-banner {
     height: 300px;
