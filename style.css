@@ -576,10 +576,11 @@ header .subMenu > ul li:last-child {
   flex: 0 0 calc(33.33% - 30px);
   width: calc(33.33% - 30px);
   margin: 0 15px 20px;
-  padding: 10px 20px;
   border: solid 1px black;
   border-radius: 5px;
   z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .blogs .card-wrapper .card h4 {
   font-size: 32px;
@@ -587,6 +588,22 @@ header .subMenu > ul li:last-child {
 .blogs .card-wrapper .card p {
   font-size: 20px;
   margin-top: 10px;
+}
+.blogs .card-wrapper .card .img-wrap {
+  position: relative;
+  width: 100%;
+  max-height: 220px;
+  height: 220px;
+  overflow: hidden;
+}
+.blogs .card-wrapper .card .img-wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.blogs .card-wrapper .card .wrap {
+  padding: 20px 10px;
 }
 .blogs .pagination {
   position: relative;
@@ -599,10 +616,36 @@ header .subMenu > ul li:last-child {
   justify-content: center;
 }
 .blogs .pagination .paginationList li {
+  position: relative;
   margin: 0 10px;
   font-size: 20px;
   cursor: pointer;
+  padding-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+.blogs .pagination .paginationList li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  border-bottom: solid 2px transparent;
+  transition: all 0.3s ease-in-out;
 }
 .blogs .pagination .paginationList li span {
   display: inline-block;
+}
+.blogs .pagination .paginationList li:hover {
+  color: #0084f2;
+}
+.blogs .pagination .paginationList li:hover::after {
+  width: 100%;
+  border-bottom: solid 2px #0084f2;
+}
+.blogs .pagination .paginationList li.active {
+  color: #0084f2;
+}
+.blogs .pagination .paginationList li.active::after {
+  width: 100%;
+  border-bottom: solid 2px #0084f2;
 }/*# sourceMappingURL=style.css.map */

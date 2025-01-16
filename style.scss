@@ -556,16 +556,32 @@ header {
             flex: 0 0 calc(33.33% - 30px);
             width: calc(33.33% - 30px);
             margin: 0 15px 20px;
-            padding: 10px 20px;
             border: solid 1px black;
             border-radius: 5px;
             z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
             h4 {
                 font-size: 32px;
             }
             p {
                 font-size: 20px;
                 margin-top: 10px;
+            }
+            .img-wrap {
+                position: relative;
+                width: 100%;
+                max-height: 220px;
+                height: 220px;
+                overflow: hidden;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+            }
+            .wrap {
+                padding: 20px 10px;
             }
         }
     }
@@ -578,11 +594,37 @@ header {
             align-items: center;
             justify-content: center;
             li {
+                position: relative;
                 margin: 0 10px;
                 font-size: 20px;
                 cursor: pointer;
+                padding-bottom: 5px;
+                transition: all 0.3s ease-in-out;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    border-bottom: solid 2px transparent;
+                    transition: all 0.3s ease-in-out;
+                }
                 span {
                     display: inline-block;
+                }
+                &:hover {
+                    color: #0084f2;
+                    &::after {
+                        width: 100%;
+                        border-bottom: solid 2px #0084f2;
+                    }
+                }
+                &.active {
+                    color: #0084f2;
+                    &::after {
+                        width: 100%;
+                        border-bottom: solid 2px #0084f2;
+                    }
                 }
             }
         }

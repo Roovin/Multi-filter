@@ -150,7 +150,7 @@ if(blog) {
     
     var obj = {
         "page": 1,
-        "rows": 2,
+        "rows": 12,
         "visible": 2
     }
 
@@ -207,6 +207,9 @@ if(blog) {
             wholeData.forEach((element) => {
                 const card = `<div class="card">
                                 <a href="/" class="emptyLink">.</a>
+                                <div class="img-wrap">
+                                    <img src="${element.img}" alt="${element.alt}">
+                                </div>
                                 <div class="wrap">
                                     <h4>${element.title}</h4>
                                     <p>${element.content}</p>
@@ -252,7 +255,6 @@ if(blog) {
         var trimEnd = trimStart + rows
         var trimData = data.slice(trimStart, trimEnd)
         var totalPages = Math.ceil(data.length / rows);
-        // console.log(totalPages);
         let active;
         liTag = ''
         
@@ -267,8 +269,6 @@ if(blog) {
                 liTag += `<li class="page dots"><span>...</span></li>`;
             }
         }
-
-        console.log(afterPage);
 
         for(let plength = beforePage; plength <= afterPage; plength++) {
         
@@ -308,12 +308,10 @@ if(blog) {
     function pageClickHandler (data, totalPages) {
         const paginationWrap = document.querySelectorAll('.blogs .pagination ul.paginationList');
         const paginationLi = document.querySelectorAll('.blogs .pagination ul.paginationList li');
-        // console.log(paginationLi);
+        
         paginationLi.forEach(element => {
             element.addEventListener('click', function () {
-                // console.log(this);
                 const pgValue = this.getAttribute('value');
-                
                 if(pgValue === 'prev') {
                     // obj.page = (parseInt((obj.page) - 1))
                     obj.page = obj.page - 1
@@ -330,7 +328,6 @@ if(blog) {
 
                 paginationWrap.innerHTML = '';
                 showData(data)
-
             })
         });
     }

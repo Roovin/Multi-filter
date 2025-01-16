@@ -3,150 +3,200 @@
         "id": 1,
         "content_type": "Demo",
         "title": "Demo",
+        "img": "images/blog/blog.webp",
+        "alt": "blog",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum."
     },
     {
         "id": 2,
         "content_type": "Ebook",
         "title": "Ebook",
+        "img": "images/blog/burtonbands.webp",
+        "alt": "burtonbands",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 3,
         "content_type": "Demo",
         "title": "Demo",
+        "img": "images/blog/dry-tips_1.webp",
+        "alt": "dry-tips",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 4,
         "content_type": "Infographic",
         "title": "Infographic",
+        "img": "images/blog/linden.webp",
+        "alt": "linden",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 5,
         "content_type": "Index Report",
         "title": "Index Report",
+        "img": "images/blog/oral-b.webp",
+        "alt": "oral",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 6,
         "content_type": "Onpager",
         "title": "Onpager",
+        "img": "images/blog/prior-dt.webp",
+        "alt": "prior",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 7,
         "content_type": "Demo",
         "title": "Demo",
+        "img": "images/blog/salvin.webp",
+        "alt": "salvin",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum."
     },
     {
         "id": 8,
         "content_type": "Ebook",
         "title": "Ebook",
+        "img": "images/blog/smartSelect.webp",
+        "alt": "smartSelect",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 9,
         "content_type": "Demo",
         "title": "Demo",
+        "img": "images/blog/takla-man.jpeg",
+        "alt": "takla-man",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 10,
         "content_type": "Infographic",
         "title": "Infographic",
+        "img": "images/blog/vara.webp",
+        "alt": "vara",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 11,
         "content_type": "Index Report",
         "title": "Index Report",
+        "img": "images/blog/varnish-pen.webp",
+        "alt": "varnish pen",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 12,
         "content_type": "Onpager",
         "title": "Onpager",
+        "img": "images/blog/varnish.webp",
+        "alt": "varnish",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 13,
         "content_type": "Demo",
         "title": "Demo",
+        "img": "images/blog/vera-young.webp",
+        "alt": "vera young",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum."
     },
     {
         "id": 14,
         "content_type": "Ebook",
         "title": "Ebook",
+        "img": "images/blog/zooby.webp",
+        "alt": "zooby",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 15,
         "content_type": "Demo",
         "title": "Demo",
+        "img": "images/blog/varnish.webp",
+        "alt": "varnish",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 16,
         "content_type": "Infographic",
         "title": "Infographic",
+        "img": "images/blog/vara.webp",
+        "alt": "vara",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 17,
         "content_type": "Index Report",
         "title": "Index Report",
+        "img": "images/blog/smartSelect.webp",
+        "alt": "smartSelect",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 18,
         "content_type": "Onpager",
         "title": "Onpager",
+        "img": "images/blog/prior-dt.webp",
+        "alt": "prior",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 19,
         "content_type": "Demo",
         "title": "Demo",
+        "img": "images/blog/linden.webp",
+        "alt": "linden",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum."
     },
     {
         "id": 20,
         "content_type": "Ebook",
         "title": "Ebook",
+        "img": "images/blog/blog.webp",
+        "alt": "blog",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 21,
         "content_type": "Demo",
         "title": "Demo",
+        "img": "images/blog/burtonbands.webp",
+        "alt": "burtonbands",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 22,
         "content_type": "Infographic",
         "title": "Infographic",
+        "img": "images/blog/takla-man.jpeg",
+        "alt": "takla-man",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 23,
         "content_type": "Index Report",
         "title": "Index Report",
+        "img": "images/blog/zooby.webp",
+        "alt": "zooby",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 24,
         "content_type": "Onpager",
         "title": "Onpager",
+        "img": "images/blog/prior-dt.webp",
+        "alt": "prior",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     },
     {
         "id": 25,
         "content_type": "Onpager",
         "title": "Onpager",
+        "img": "images/blog/takla-man.jpeg",
+        "alt": "takla-man",
         "content" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, rerum." 
     }
 ]
