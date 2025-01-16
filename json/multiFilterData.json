@@ -1,0 +1,202 @@
+[
+    {
+        "id": 1,
+        "content_type": "Application Notes",
+        "title": "Application Notes",
+        "img": "images/blog/blog.webp",
+        "alt": "blog",
+        "content" : "This application note is based on tests developed by Qorvo application engineering using a Tektronix 6 Series MSO."
+    },
+    {
+        "id": 2,
+        "content_type": "Guides & Manuals",
+        "title": "Guides & Manuals",
+        "img": "images/blog/burtonbands.webp",
+        "alt": "burtonbands",
+        "content" : "The AstroNova TMX is a high-performance data acquisition system designed for complex testing environments. It features advanced recording capabilities, a user-friendly interface, and versatile input options." 
+    },
+    {
+        "id": 3,
+        "content_type": "Spec & Data Sheet",
+        "title": "Spec & Data Sheet",
+        "img": "images/blog/dry-tips_1.webp",
+        "alt": "dry-tips",
+        "content" : "Compute Express Link (CXL) is a new high-speed CPU-to-Device and CPU-to-Memory interconnect designed to accelerate next-generation data center performance." 
+    },
+    {
+        "id": 4,
+        "content_type": "Videos",
+        "title": "Videos",
+        "img": "images/blog/linden.webp",
+        "alt": "linden",
+        "content" : "The 5th and 6th Generation Technologies and High-Speed Digital Ecosystem discusses the evolution of digital technologies and high-speed systems across generations." 
+    },
+    {
+        "id": 5,
+        "content_type": "White Papers",
+        "title": "White Papers",
+        "img": "images/blog/oral-b.webp",
+        "alt": "oral",
+        "content" : "PCl Express®, short for Peripheral Component Interconnect Express, is a high-performance and high-bandwidth serial communication interconnect standard." 
+    },
+    {
+        "id": 6,
+        "content_type": "Spec & Data Sheet",
+        "title": "Spec & Data Sheet",
+        "img": "images/blog/prior-dt.webp",
+        "alt": "prior",
+        "content" : "Compute Express Link (CXL) is a new high-speed CPU-to-Device and CPU-to-Memory interconnect designed to accelerate next-generation data center performance." 
+    },
+    {
+        "id": 7,
+        "content_type": "White Papers",
+        "title": "White Papers",
+        "img": "images/blog/salvin.webp",
+        "alt": "salvin",
+        "content" : "Creating Arbitrary Waveforms Doesn’t&nbsp;Have to be Difficult"
+    },
+    {
+        "id": 8,
+        "content_type": "Videos",
+        "title": "Videos",
+        "img": "images/blog/smartSelect.webp",
+        "alt": "smartSelect",
+        "content" : "&nbsp;Oscilloscope Triggering Fundamentals - Trigger Holdoff, Part 5 " 
+    },
+    {
+        "id": 9,
+        "content_type": "Application Notes",
+        "title": "Application Notes",
+        "img": "images/blog/takla-man.jpeg",
+        "alt": "takla-man",
+        "content" : "This application note is based on tests developed by Qorvo application engineering using a Tektronix 6 Series MSO." 
+    },
+    {
+        "id": 10,
+        "content_type": "Guides & Manuals",
+        "title": "Guides & Manuals",
+        "img": "images/blog/vara.webp",
+        "alt": "vara",
+        "content" : "Explore artificial intelligence solutions tailored to your needs and applications. Learn more today at TRS-RenTelco." 
+    },
+    {
+        "id": 11,
+        "content_type": "Application Notes",
+        "title": "Application Notes",
+        "img": "images/blog/blog.webp",
+        "alt": "blog",
+        "content" : "This application note is based on tests developed by Qorvo application engineering using a Tektronix 6 Series MSO."
+    },
+    {
+        "id": 12,
+        "content_type": "Guides & Manuals",
+        "title": "Guides & Manuals",
+        "img": "images/blog/burtonbands.webp",
+        "alt": "burtonbands",
+        "content" : "The AstroNova TMX is a high-performance data acquisition system designed for complex testing environments. It features advanced recording capabilities, a user-friendly interface, and versatile input options." 
+    },
+    {
+        "id": 13,
+        "content_type": "Spec & Data Sheet",
+        "title": "Spec & Data Sheet",
+        "img": "images/blog/dry-tips_1.webp",
+        "alt": "dry-tips",
+        "content" : "Compute Express Link (CXL) is a new high-speed CPU-to-Device and CPU-to-Memory interconnect designed to accelerate next-generation data center performance." 
+    },
+    {
+        "id": 14,
+        "content_type": "Videos",
+        "title": "Videos",
+        "img": "images/blog/linden.webp",
+        "alt": "linden",
+        "content" : "The 5th and 6th Generation Technologies and High-Speed Digital Ecosystem discusses the evolution of digital technologies and high-speed systems across generations." 
+    },
+    {
+        "id": 15,
+        "content_type": "White Papers",
+        "title": "White Papers",
+        "img": "images/blog/oral-b.webp",
+        "alt": "oral",
+        "content" : "PCl Express®, short for Peripheral Component Interconnect Express, is a high-performance and high-bandwidth serial communication interconnect standard." 
+    },
+    {
+        "id": 16,
+        "content_type": "Spec & Data Sheet",
+        "title": "Spec & Data Sheet",
+        "img": "images/blog/prior-dt.webp",
+        "alt": "prior",
+        "content" : "Compute Express Link (CXL) is a new high-speed CPU-to-Device and CPU-to-Memory interconnect designed to accelerate next-generation data center performance." 
+    },
+    {
+        "id": 17,
+        "content_type": "White Papers",
+        "title": "White Papers",
+        "img": "images/blog/salvin.webp",
+        "alt": "salvin",
+        "content" : "Creating Arbitrary Waveforms Doesn’t&nbsp;Have to be Difficult"
+    },
+    {
+        "id": 18,
+        "content_type": "Videos",
+        "title": "Videos",
+        "img": "images/blog/smartSelect.webp",
+        "alt": "smartSelect",
+        "content" : "&nbsp;Oscilloscope Triggering Fundamentals - Trigger Holdoff, Part 5 " 
+    },
+    {
+        "id": 19,
+        "content_type": "Application Notes",
+        "title": "Application Notes",
+        "img": "images/blog/takla-man.jpeg",
+        "alt": "takla-man",
+        "content" : "This application note is based on tests developed by Qorvo application engineering using a Tektronix 6 Series MSO." 
+    },
+    {
+        "id": 20,
+        "content_type": "Guides & Manuals",
+        "title": "Guides & Manuals",
+        "img": "images/blog/vara.webp",
+        "alt": "vara",
+        "content" : "Explore artificial intelligence solutions tailored to your needs and applications. Learn more today at TRS-RenTelco." 
+    },
+    {
+        "id": 21,
+        "content_type": "Application Notes",
+        "title": "Application Notes",
+        "img": "images/blog/blog.webp",
+        "alt": "blog",
+        "content" : "This application note is based on tests developed by Qorvo application engineering using a Tektronix 6 Series MSO."
+    },
+    {
+        "id": 22,
+        "content_type": "Guides & Manuals",
+        "title": "Guides & Manuals",
+        "img": "images/blog/burtonbands.webp",
+        "alt": "burtonbands",
+        "content" : "The AstroNova TMX is a high-performance data acquisition system designed for complex testing environments. It features advanced recording capabilities, a user-friendly interface, and versatile input options." 
+    },
+    {
+        "id": 23,
+        "content_type": "Spec & Data Sheet",
+        "title": "Spec & Data Sheet",
+        "img": "images/blog/dry-tips_1.webp",
+        "alt": "dry-tips",
+        "content" : "Compute Express Link (CXL) is a new high-speed CPU-to-Device and CPU-to-Memory interconnect designed to accelerate next-generation data center performance." 
+    },
+    {
+        "id": 24,
+        "content_type": "Videos",
+        "title": "Videos",
+        "img": "images/blog/linden.webp",
+        "alt": "linden",
+        "content" : "The 5th and 6th Generation Technologies and High-Speed Digital Ecosystem discusses the evolution of digital technologies and high-speed systems across generations." 
+    },
+    {
+        "id": 25,
+        "content_type": "White Papers",
+        "title": "White Papers",
+        "img": "images/blog/oral-b.webp",
+        "alt": "oral",
+        "content" : "PCl Express®, short for Peripheral Component Interconnect Express, is a high-performance and high-bandwidth serial communication interconnect standard." 
+    }
+]

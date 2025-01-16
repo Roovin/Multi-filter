@@ -1,1 +1,94 @@
-/*# sourceMappingURL=multi-filter.css.map */
+.news-filter {
+  position: relative;
+  width: 100%;
+}
+.news-filter .multiFilter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.news-filter .multiFilter .clear-btn {
+  position: relative;
+  cursor: pointer;
+}
+.news-filter .multi-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.news-filter .multi-wrap .multi_filter_wrap {
+  position: relative;
+  width: auto;
+  padding: 10px 30px 10px 10px;
+  margin-left: 10px;
+  border: solid 1px black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.news-filter .multi-wrap .multi_filter_wrap .list-wrap {
+  position: absolute;
+  left: 50%;
+  top: 44px;
+  width: 200px;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  display: block;
+  border: solid 1px black;
+  background-color: white;
+  list-style: none;
+  box-shadow: 0 0 0 0 rgb(0, 0, 0);
+  z-index: 6;
+  transform: translateX(-50%);
+}
+.news-filter .multi-wrap .multi_filter_wrap .list-wrap.active {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}
+.news-filter .multi-wrap .multi_filter_wrap .list-wrap ul {
+  position: relative;
+  padding: 10px;
+}
+.news-filter .multi-wrap .multi_filter_wrap .list-wrap ul li {
+  padding-bottom: 10px;
+}
+.news-filter .multi-wrap .multi_filter_wrap .arrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 14px;
+  height: 8px;
+  transform: translateY(-50%);
+  background: url("images/dropDown.png") no-repeat;
+  background-size: cover;
+}
+.news-filter .card-wrapper {
+  position: relative;
+  width: calc(100% + 30px);
+  margin-left: -15px;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.news-filter .card-wrapper .card {
+  position: relative;
+  flex: 0 0 calc(33.33% - 30px);
+  width: calc(33.33% - 30px);
+  margin: 0 15px 30px;
+  border: solid 1px black;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.news-filter .card-wrapper .card .content {
+  padding: 20px;
+}
+.news-filter .card-wrapper .card .content h2 {
+  margin-bottom: 20px;
+}
+.news-filter .card-wrapper .card .content p {
+  font-size: 20px;
+}/*# sourceMappingURL=multi-filter.css.map */

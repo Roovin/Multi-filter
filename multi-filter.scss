@@ -1,0 +1,98 @@
+.news-filter {
+    position: relative;
+    width: 100%;
+    .multiFilter {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        .clear-btn {
+            position: relative;
+            cursor: pointer;
+        }
+    }
+    .multi-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        .multi_filter_wrap {
+            position: relative;
+            width: auto;
+            padding: 10px 30px 10px 10px;
+            margin-left: 10px;
+            border: solid 1px black;
+            border-radius: 5px;
+            cursor: pointer;
+            .list-wrap {
+                position: absolute;
+                left: 50%;
+                top: 44px;
+                width: 200px;
+                height: 0;
+                opacity: 0;
+                visibility: hidden;
+                display: block;
+                border: solid 1px black;
+                background-color: white;
+                list-style: none;
+                box-shadow: 0 0 0 0 rgb(0, 0, 0);
+                z-index: 6;
+                transform: translateX(-50%);
+                &.active {
+                    height: auto;
+                    opacity: 1;
+                    visibility: visible;
+                }
+                ul {
+                    position: relative;
+                    padding: 10px;
+                    li {
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+            .arrow {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 8px;
+                    width: 14px;
+                    height: 8px;
+                    transform: translateY(-50%);
+                    background: url('images/dropDown.png') no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+       
+    }
+    .card-wrapper {
+        position: relative;
+        width: calc(100% + 30px);
+        margin-left: -15px;
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        // align-items: center;
+        .card {
+            position: relative;
+            flex: 0 0 calc(33.33% - 30px);
+            width: calc(33.33% - 30px);
+            margin: 0 15px 30px;
+            border: solid 1px black;
+            border-radius: 5px;
+            overflow: hidden;
+            .content {
+                padding: 20px;
+                h2 {
+                    margin-bottom: 20px;
+                }
+                p {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
