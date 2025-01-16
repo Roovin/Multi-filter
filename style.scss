@@ -462,6 +462,12 @@ header {
 .hero-banner {
     padding: 0;
     height: 700px;
+    @media (max-width: 595px) {
+        height: 300px;
+    }
+    @media (min-width: 595px) and (max-width: 767px) {
+        height: 500px;
+    }
     .bg-img {
         position: relative;
         width: 100%;
@@ -478,13 +484,22 @@ header {
 .blogs {
     .filterWrapper {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         width: 100%;
+        @media (max-width: 595px) {
+            flex-wrap: wrap;
+        }
     }
     .filterListWrap {
         position: relative;
         display: flex;
         align-items: center;
+        @media (max-width: 595px) {
+            flex-wrap: wrap;
+            width: 100%;
+            
+        }
         .filter_wrap {
             position: relative;
             width: auto;
@@ -493,8 +508,23 @@ header {
             border: solid 1px black;
             border-radius: 5px;
             cursor: pointer;
+            @media (max-width: 595px) {
+                max-width: 350px;
+                width: 100%;
+                margin-left: 10px;
+                margin-top: 10px;
+            }
+            @media (max-width: 480px) {
+                margin-left: 0;
+            }
             p {
                 font-size: 20px;
+                @media (max-width: 767px) {
+                    font-size: 18px;
+                }
+                @media (max-width: 595px) {
+                    width: 100%;
+                }
             }
             .arrow {
                 // position: relative;
@@ -523,6 +553,7 @@ header {
                 list-style: none;
                 box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
                 z-index: 2;
+              
                 &.active {
                     height: auto;
                     opacity: 1;
@@ -540,7 +571,12 @@ header {
     .clear-btn {
         margin-left: 10px;
         cursor: pointer;
-        align-self: last baseline;
+        // align-self: last baseline;
+        @media (max-width: 595px) {
+            width: 100%;
+            margin-top: 10px;
+            margin-left: 0;
+        }
     }
     .card-wrapper {
         position: relative;
@@ -551,22 +587,58 @@ header {
         width: calc(100% + 30px);
         flex: 0 0 calc(100% + 30px);
         margin-left: -15px;
+        @media (max-width: 991px) {
+            width: calc(100% + 20px);
+            flex: 0 0 calc(100% + 20px);
+            margin-left: -10px;
+        }
+        @media (max-width: 595px) {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 30px;
+        }
         .card {
             position: relative;
             flex: 0 0 calc(33.33% - 30px);
             width: calc(33.33% - 30px);
-            margin: 0 15px 20px;
+            margin: 0 15px 30px;
             border: solid 1px black;
             border-radius: 5px;
             z-index: 1;
             border-radius: 5px;
             overflow: hidden;
+            @media (min-width: 768px) and (max-width: 991px) {
+                flex: 0 0 calc(50% - 20px);
+                width: calc(50% - 20px);
+                margin: 0 10px 20px;
+            }
+            @media (max-width: 767px) {
+                width: calc(50% - 20px);
+                flex: 0 0 calc(50% - 20px);
+                margin: 0 10px 20px;
+            }
+            @media (max-width: 595px) {
+                max-width: 300px;
+                flex: 0 0 100%;
+                width: 100%;
+                margin: 0 auto 20px;
+            }
+            @media (max-width: 480px) {
+                width: 100%;
+                flex: 0 0 100%;
+            }
             h4 {
                 font-size: 32px;
+                @media (max-width: 767px) {
+                    font-size: 28px;
+                }
             }
             p {
                 font-size: 20px;
                 margin-top: 10px;
+                @media (max-width: 767px) {
+                    font-size: 18px;
+                }
             }
             .img-wrap {
                 position: relative;
@@ -574,6 +646,21 @@ header {
                 max-height: 220px;
                 height: 220px;
                 overflow: hidden;
+                @media (max-width: 595px) {
+                    height: 100%;
+                }
+                @media (min-width: 596px) and (max-width: 767px) {
+                    max-height: 150px;
+                    height: 150px;
+                }
+                @media (min-width: 768px) and (max-width: 991px) {
+                    max-height: 180px;
+                    height: 180px;
+                }
+                @media (min-width: 992px) and (max-width: 1200px) {
+                    max-height: 180px;
+                    height: 180px;
+                }
                     img {
                         width: 100%;
                         height: 100%;

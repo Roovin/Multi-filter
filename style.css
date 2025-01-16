@@ -486,6 +486,16 @@ header .subMenu > ul li:last-child {
   padding: 0;
   height: 700px;
 }
+@media (max-width: 595px) {
+  .hero-banner {
+    height: 300px;
+  }
+}
+@media (min-width: 595px) and (max-width: 767px) {
+  .hero-banner {
+    height: 500px;
+  }
+}
 .hero-banner .bg-img {
   position: relative;
   width: 100%;
@@ -500,13 +510,25 @@ header .subMenu > ul li:last-child {
 
 .blogs .filterWrapper {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+@media (max-width: 595px) {
+  .blogs .filterWrapper {
+    flex-wrap: wrap;
+  }
 }
 .blogs .filterListWrap {
   position: relative;
   display: flex;
   align-items: center;
+}
+@media (max-width: 595px) {
+  .blogs .filterListWrap {
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }
 .blogs .filterListWrap .filter_wrap {
   position: relative;
@@ -517,8 +539,31 @@ header .subMenu > ul li:last-child {
   border-radius: 5px;
   cursor: pointer;
 }
+@media (max-width: 595px) {
+  .blogs .filterListWrap .filter_wrap {
+    max-width: 350px;
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .blogs .filterListWrap .filter_wrap {
+    margin-left: 0;
+  }
+}
 .blogs .filterListWrap .filter_wrap p {
   font-size: 20px;
+}
+@media (max-width: 767px) {
+  .blogs .filterListWrap .filter_wrap p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 595px) {
+  .blogs .filterListWrap .filter_wrap p {
+    width: 100%;
+  }
 }
 .blogs .filterListWrap .filter_wrap .arrow::after {
   content: "";
@@ -559,7 +604,13 @@ header .subMenu > ul li:last-child {
 .blogs .clear-btn {
   margin-left: 10px;
   cursor: pointer;
-  align-self: last baseline;
+}
+@media (max-width: 595px) {
+  .blogs .clear-btn {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 0;
+  }
 }
 .blogs .card-wrapper {
   position: relative;
@@ -571,23 +622,75 @@ header .subMenu > ul li:last-child {
   flex: 0 0 calc(100% + 30px);
   margin-left: -15px;
 }
+@media (max-width: 991px) {
+  .blogs .card-wrapper {
+    width: calc(100% + 20px);
+    flex: 0 0 calc(100% + 20px);
+    margin-left: -10px;
+  }
+}
+@media (max-width: 595px) {
+  .blogs .card-wrapper {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
 .blogs .card-wrapper .card {
   position: relative;
   flex: 0 0 calc(33.33% - 30px);
   width: calc(33.33% - 30px);
-  margin: 0 15px 20px;
+  margin: 0 15px 30px;
   border: solid 1px black;
   border-radius: 5px;
   z-index: 1;
   border-radius: 5px;
   overflow: hidden;
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .blogs .card-wrapper .card {
+    flex: 0 0 calc(50% - 20px);
+    width: calc(50% - 20px);
+    margin: 0 10px 20px;
+  }
+}
+@media (max-width: 767px) {
+  .blogs .card-wrapper .card {
+    width: calc(50% - 20px);
+    flex: 0 0 calc(50% - 20px);
+    margin: 0 10px 20px;
+  }
+}
+@media (max-width: 595px) {
+  .blogs .card-wrapper .card {
+    max-width: 300px;
+    flex: 0 0 100%;
+    width: 100%;
+    margin: 0 auto 20px;
+  }
+}
+@media (max-width: 480px) {
+  .blogs .card-wrapper .card {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+}
 .blogs .card-wrapper .card h4 {
   font-size: 32px;
+}
+@media (max-width: 767px) {
+  .blogs .card-wrapper .card h4 {
+    font-size: 28px;
+  }
 }
 .blogs .card-wrapper .card p {
   font-size: 20px;
   margin-top: 10px;
+}
+@media (max-width: 767px) {
+  .blogs .card-wrapper .card p {
+    font-size: 18px;
+  }
 }
 .blogs .card-wrapper .card .img-wrap {
   position: relative;
@@ -595,6 +698,29 @@ header .subMenu > ul li:last-child {
   max-height: 220px;
   height: 220px;
   overflow: hidden;
+}
+@media (max-width: 595px) {
+  .blogs .card-wrapper .card .img-wrap {
+    height: 100%;
+  }
+}
+@media (min-width: 596px) and (max-width: 767px) {
+  .blogs .card-wrapper .card .img-wrap {
+    max-height: 150px;
+    height: 150px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .blogs .card-wrapper .card .img-wrap {
+    max-height: 180px;
+    height: 180px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .blogs .card-wrapper .card .img-wrap {
+    max-height: 180px;
+    height: 180px;
+  }
 }
 .blogs .card-wrapper .card .img-wrap img {
   width: 100%;

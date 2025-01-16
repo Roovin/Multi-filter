@@ -155,7 +155,7 @@ if(blog) {
     }
 
     function blogList () {
-        const filterWrap = document.querySelector('.blogs .filterListWrap .filter_wrap p');
+        const filterWrap = document.querySelector('.blogs .filterListWrap .filter_wrap');
         filterWrap.addEventListener('click', function () {
             const listToggle = this.parentElement;
             const list = listToggle.querySelector('.list-wrap');
@@ -331,6 +331,23 @@ if(blog) {
             })
         });
     }
+
+    document.addEventListener('click', function (e) {
+        const targetClass = e.target.getAttribute('class');
+        const listWrap = this.querySelector('.blogs .filterListWrap .filter_wrap');
+        const listWrapPar = this.querySelector('.blogs .filterListWrap .filter_wrap p');
+        const mainList = this.querySelector('.blogs .filterListWrap .filter_wrap .list-wrap');
+     
+        if((e.target == listWrap) || (e.target == listWrapPar)) {
+          console.log('excute');
+        } else {
+            if(mainList.classList.contains('active')) {
+                mainList.classList.remove('active')
+            }
+        }
+        // if()
+        // console.log(targetClass);
+    })
 
     document.addEventListener('DOMContentLoaded', function () {
         blogList();
