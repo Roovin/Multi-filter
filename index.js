@@ -250,7 +250,7 @@ if(blog) {
     }
 
     function pagination (data, page, rows) {
-        const paginationWrap = document.querySelector('.blogs .pagination .paginationList')
+        const paginationWrap = document.querySelector('.blogs .pagination .paginationList');
         var trimStart = (page - 1) * rows;
         var trimEnd = trimStart + rows
         var trimData = data.slice(trimStart, trimEnd)
