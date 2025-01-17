@@ -53,6 +53,11 @@
                         .item {
                             position: relative;
                             label {
+                                display: inline-block;
+                                position: relative;
+                                input {
+                                    display: inline-block;
+                                }
                                 span {
                                     padding-left: 10px;
                                 }

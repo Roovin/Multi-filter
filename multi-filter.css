@@ -58,6 +58,13 @@
 .news-filter .multi-wrap .multi_filter_wrap .list-wrap ul li .item {
   position: relative;
 }
+.news-filter .multi-wrap .multi_filter_wrap .list-wrap ul li .item label {
+  display: inline-block;
+  position: relative;
+}
+.news-filter .multi-wrap .multi_filter_wrap .list-wrap ul li .item label input {
+  display: inline-block;
+}
 .news-filter .multi-wrap .multi_filter_wrap .list-wrap ul li .item label span {
   padding-left: 10px;
 }

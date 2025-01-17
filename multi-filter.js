@@ -16,6 +16,7 @@ if(multiSection) {
             const wholeData = await response.json();
             showData(wholeData)
             showList(wholeData);
+            filterData(wholeData);
         } catch (error) {
             console.error(error.message);
         }
@@ -43,19 +44,49 @@ if(multiSection) {
         cardWrap.innerHTML = card;
     }
 
+    function filterData (data) {
+        console.log(data);
+        const list = document.querySelectorAll('.news-filter .multiFilter .list-wrap ul.list li input');
+        let filtered = [];
+        list.forEach((item) => {
+            item.addEventListener('click', function () {
+                const liValue = this.value;
+                if(this.classList.contains('active')) {
+                    this.classList.remove('active');
+                    console.log(filtered.length);
+                    // if(filtered.length > 1) {
+                        if(item.content_type != liValue) {
+                            filtered.push(item);
+                        }
+                        console.log(filtered.length);
+                    // } else {
+                    //     showData(filtered);
+                    // }
+                } else {
+                    this.classList.add('active')
+                    data.forEach((item) => {
+                        if(item.content_type === liValue) {
+                            filtered.push(item);
+                        }
+                    })
+                    showData(filtered);
+                }
+                
+            })
+        })
+        
+    }
+
     function showList(data) {
-        // console.log(data);
         const listWrap = document.querySelector('.news-filter .multiFilter .multi-wrap .multi_filter_wrap ul.list');
        const uniqueData = data.filter((item, index, self) => index === self.findIndex((t) => t.title === item.title))
-        console.log(uniqueData);
         let liList = '';
         uniqueData.forEach((item) => {
-            console.log(item);
             liList += `<li>
                         <div class="item">
                             <label for="${item.id}">
                                 <input type="checkbox" value="${item.content_type}" id="${item.id}">
-                                <span>${item.content_type}</span>
+                                ${item.content_type}
                             </label>
                         </div>
                     </li>`;
@@ -65,7 +96,6 @@ if(multiSection) {
 
     function pagination (data, page, rows) {
         const paginationWrap = document.querySelector('.news-filter .pagination .paginationList');
-        console.log(paginationWrap);
         var trimStart = (page - 1) * rows;
         var trimEnd = trimStart + rows;
         var trimData = data.slice(trimStart, trimEnd);
@@ -106,11 +136,9 @@ if(multiSection) {
             liTag += `<li class="page show-more next" value="next"><span>></span></li>`
         }
 
-        // paginationWrap.innerHTML = liTag
         paginationWrap.innerHTML = liTag;
 
         if(totalPages <= 1) {
-            console.log(totalPages);
             paginationWrap.innerHTML = '';
         }
 
@@ -154,7 +182,6 @@ if(multiSection) {
     function filterListAcet () {
         const resourceList = document.querySelector('.news-filter .multiFilter .multi-wrap .multi_filter_wrap');
         if(resourceList) {
-            console.log(resourceList);
             resourceList.addEventListener('click', function () {
                 const list = this.querySelector('.list-wrap');
                 if(list.classList.contains('active')) {
