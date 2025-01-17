@@ -48,6 +48,19 @@ if(multiSection) {
         const listWrap = document.querySelector('.news-filter .multiFilter .multi-wrap .multi_filter_wrap ul.list');
        const uniqueData = data.filter((item, index, self) => index === self.findIndex((t) => t.title === item.title))
         console.log(uniqueData);
+        let liList = '';
+        uniqueData.forEach((item) => {
+            console.log(item);
+            liList += `<li>
+                        <div class="item">
+                            <label for="${item.id}">
+                                <input type="checkbox" value="${item.content_type}" id="${item.id}">
+                                <span>${item.content_type}</span>
+                            </label>
+                        </div>
+                    </li>`;
+        })
+        listWrap.innerHTML = liList;
     }
 
     function pagination (data, page, rows) {

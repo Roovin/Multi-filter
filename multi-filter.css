@@ -20,10 +20,10 @@
 }
 .news-filter .multi-wrap .multi_filter_wrap {
   position: relative;
-  width: auto;
-  padding: 10px 30px 10px 10px;
+  width: 200px;
+  padding: 10px 30px 10px 20px;
   margin-left: 10px;
-  border: solid 1px black;
+  box-shadow: 0px 0px 3px 0px rgb(0, 0, 0);
   border-radius: 5px;
   cursor: pointer;
 }
@@ -35,13 +35,13 @@
   height: 0;
   opacity: 0;
   visibility: hidden;
-  display: block;
-  border: solid 1px black;
   background-color: white;
   list-style: none;
-  box-shadow: 0 0 0 0 rgb(0, 0, 0);
+  box-shadow: 0px 5px 6px 0px rgb(0, 0, 0);
   z-index: 6;
+  overflow: hidden;
   transform: translateX(-50%);
+  transition: height 0.3s ease-in-out;
 }
 .news-filter .multi-wrap .multi_filter_wrap .list-wrap.active {
   height: auto;
@@ -55,11 +55,17 @@
 .news-filter .multi-wrap .multi_filter_wrap .list-wrap ul li {
   padding-bottom: 10px;
 }
+.news-filter .multi-wrap .multi_filter_wrap .list-wrap ul li .item {
+  position: relative;
+}
+.news-filter .multi-wrap .multi_filter_wrap .list-wrap ul li .item label span {
+  padding-left: 10px;
+}
 .news-filter .multi-wrap .multi_filter_wrap .arrow::after {
   content: "";
   position: absolute;
   top: 50%;
-  right: 8px;
+  right: 20px;
   width: 14px;
   height: 8px;
   transform: translateY(-50%);
