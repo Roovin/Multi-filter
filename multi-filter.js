@@ -6,7 +6,7 @@ if(multiSection) {
         "rows": 9,
         "visible": 2
     }
-
+    let selectedList = [];
     async function getData() {
         try {
             const response = await fetch('json/multiFilterData.json');
@@ -45,7 +45,6 @@ if(multiSection) {
     }
 
     function filterData (data) {
-        console.log(data);
         const list = document.querySelectorAll('.news-filter .multiFilter .list-wrap ul.list li input');
         let filtered = [];
         list.forEach((item) => {
@@ -53,22 +52,34 @@ if(multiSection) {
                 const liValue = this.value;
                 if(this.classList.contains('active')) {
                     this.classList.remove('active');
-                    console.log(filtered.length);
-                    // if(filtered.length > 1) {
-                        if(item.content_type != liValue) {
-                            filtered.push(item);
-                        }
-                        console.log(filtered.length);
-                    // } else {
-                    //     showData(filtered);
-                    // }
+                    selectedList = selectedList.filter(item => item !== liValue)
+                    filtered = [];
+                    if(selectedList.length > 0) {
+                        data.forEach((item) => {
+                            selectedList.forEach((removeList) => {
+                                if(item.content_type === removeList) {
+                                    filtered.push(item);
+                                }
+                            })
+                        })
+                        selectedListShow(selectedList)
+                        showData(filtered);
+                    } else {
+                        selectedListShow(selectedList)
+                        showData(data);
+                    }
                 } else {
                     this.classList.add('active')
+                    selectedList.push(liValue);
+                    filtered = [];
                     data.forEach((item) => {
-                        if(item.content_type === liValue) {
-                            filtered.push(item);
-                        }
+                        selectedList.forEach((seleList) => {
+                            if(item.content_type === seleList) {
+                                filtered.push(item);
+                            }
+                        })
                     })
+                    selectedListShow(selectedList)
                     showData(filtered);
                 }
                 
@@ -76,6 +87,24 @@ if(multiSection) {
         })
         
     }
+
+    function selectedListShow(selectedList) {
+        console.log(selectedList);
+        const selectedWrap = document.querySelector('.news-filter .selectedWrap ul');
+        let selectedHtml = '';
+        selectedList.forEach((item) => {
+            // console.log(item);
+            selectedHtml += ` <li>
+                            <div class="selected-item">
+                                <p>${item}</p>
+                                <div class="cross-icon"></div>
+                            </div>
+                        </li>`;
+        })
+        selectedWrap.innerHTML = selectedHtml;
+    }
+
+    
 
     function showList(data) {
         const listWrap = document.querySelector('.news-filter .multiFilter .multi-wrap .multi_filter_wrap ul.list');

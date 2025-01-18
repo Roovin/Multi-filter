@@ -82,6 +82,43 @@
         }
        
     }
+    .selectedWrap {
+        position: relative;
+        width: 100%;
+        ul {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            li {
+                position: relative;
+                margin: 20px 0 0 20px;
+                .selected-item {
+                    position: relative;
+                    padding: 10px 30px 10px 20px;
+                    background: #0084f2;
+                    border-radius: 30px;
+                    display: flex;
+                    align-items: center;
+                    p {
+                        color: white;
+                    }
+                    .cross-icon {
+                        cursor: pointer;
+                        &::after {
+                            content: 'X';
+                            position: absolute;
+                            top: 50%;
+                            right: 10px;
+                            width: 12px;
+                            height: 16px;
+                            color: white;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
     .card-wrapper {
         position: relative;
         width: calc(100% + 30px);
