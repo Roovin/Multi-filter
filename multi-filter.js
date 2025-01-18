@@ -71,6 +71,7 @@ if(multiSection) {
                 } else {
                     this.classList.add('active')
                     selectedList.push(liValue);
+                    console.log(this.checked);
                     filtered = [];
                     data.forEach((item) => {
                         selectedList.forEach((seleList) => {
@@ -82,18 +83,19 @@ if(multiSection) {
                     selectedListShow(selectedList)
                     showData(filtered);
                 }
-                
             })
         })
         
     }
+    // clearFacet(data, filtered, selectedList)
+    // function clearFacet(data, filtered, selectedList) {
+    //     console.log(data);
+    // }
 
     function selectedListShow(selectedList) {
-        console.log(selectedList);
         const selectedWrap = document.querySelector('.news-filter .selectedWrap ul');
         let selectedHtml = '';
         selectedList.forEach((item) => {
-            // console.log(item);
             selectedHtml += ` <li>
                             <div class="selected-item">
                                 <p>${item}</p>
@@ -101,10 +103,30 @@ if(multiSection) {
                             </div>
                         </li>`;
         })
+        
         selectedWrap.innerHTML = selectedHtml;
+        crossSelected(selectedList);
     }
+  
+    function crossSelected (selectedList) {
+        const list = document.querySelectorAll('.news-filter .multiFilter .list-wrap ul.list li input');
+        const selectedWrapLi = document.querySelectorAll('.news-filter .selectedWrap ul li');
+        const selectedWrap = document.querySelector('.news-filter .selectedWrap ul');
+        selectedWrapLi.forEach((item) => {
+            item.addEventListener('click', function () {
+                const selValue = this.querySelector('.selected-item p').innerText;
+                list.forEach((inputItem) => {
+                    const inVlaue = inputItem.value;
+                        if(inVlaue === selValue) {
+                            selectedList = selectedList.filter(selItem => selItem !== selValue);
 
-    
+                            inputItem.click(); //click trigger
+                        }
+                })
+                selectedListShow(selectedList)
+            })
+        })
+    }
 
     function showList(data) {
         const listWrap = document.querySelector('.news-filter .multiFilter .multi-wrap .multi_filter_wrap ul.list');
@@ -121,6 +143,11 @@ if(multiSection) {
                     </li>`;
         })
         listWrap.innerHTML = liList;
+    }
+
+
+    function clearFacet() {
+        
     }
 
     function pagination (data, page, rows) {
@@ -223,9 +250,12 @@ if(multiSection) {
         }
     }
 
+
     document.addEventListener('DOMContentLoaded', function () {
         getData();
         filterListAcet();
+        crossSelected(selectedList);
+    
     })
 
 }
