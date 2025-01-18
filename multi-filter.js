@@ -64,9 +64,11 @@ if(multiSection) {
                         })
                         selectedListShow(selectedList)
                         showData(filtered);
+                        clearFacet(data, filtered, selectedList)
                     } else {
                         selectedListShow(selectedList)
                         showData(data);
+                        clearFacet(data, filtered, selectedList)
                     }
                 } else {
                     this.classList.add('active')
@@ -82,15 +84,12 @@ if(multiSection) {
                     })
                     selectedListShow(selectedList)
                     showData(filtered);
+                    clearFacet(data, filtered, selectedList)
                 }
             })
         })
-        
+       
     }
-    // clearFacet(data, filtered, selectedList)
-    // function clearFacet(data, filtered, selectedList) {
-    //     console.log(data);
-    // }
 
     function selectedListShow(selectedList) {
         const selectedWrap = document.querySelector('.news-filter .selectedWrap ul');
@@ -127,6 +126,10 @@ if(multiSection) {
             })
         })
     }
+     // 
+    // function clearFacet(data, filtered, selectedList) {
+    //     console.log(data);
+    // }
 
     function showList(data) {
         const listWrap = document.querySelector('.news-filter .multiFilter .multi-wrap .multi_filter_wrap ul.list');
@@ -146,8 +149,10 @@ if(multiSection) {
     }
 
 
-    function clearFacet() {
-        
+    function clearFacet(data, filtered, selectedList) {
+        console.log(data);
+        console.log(filtered);
+        console.log(selectedList);
     }
 
     function pagination (data, page, rows) {
