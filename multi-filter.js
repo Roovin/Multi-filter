@@ -1,6 +1,7 @@
 const multiSection = document.querySelector('.news-filter');
 if(multiSection) {
 
+    const clearBtn = document.querySelector('.news-filter .multiFilter .clear-btn ');
     var obj = {
         "page": 1,
         "rows": 9,
@@ -42,6 +43,9 @@ if(multiSection) {
             showData(data)
             selectedListShow(selectedList);
             filterData(data, selectedList);
+            
+
+            clearBtn.style.display = 'none'
         })
     }
     function showData (data) {
@@ -123,7 +127,9 @@ if(multiSection) {
                             </div>
                         </li>`;
         })
-        
+        if(selectedList.length > 0) {
+            clearBtn.style.display = 'block'
+        }
         selectedWrap.innerHTML = selectedHtml;
         crossSelected(selectedList);
     }
@@ -255,7 +261,6 @@ if(multiSection) {
         const resourceList = document.querySelector('.news-filter .multiFilter .multi-wrap .multi_filter_wrap');
         if(resourceList) {
             resourceList.addEventListener('click', function () {
-                console.log(this);
                 const list = this.querySelector('.list-wrap');
                 const arrow = this.querySelector('.arrow');
                 if(list.classList.contains('active')) {
@@ -274,6 +279,9 @@ if(multiSection) {
         getData();
         filterListAcet();
         crossSelected(selectedList);
+
+        
+        clearBtn.style.display = 'none';
     
     })
 
