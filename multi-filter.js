@@ -41,7 +41,7 @@ if(multiSection) {
             })
             showData(data)
             selectedListShow(selectedList);
-            filterData(data, selectedList)
+            filterData(data, selectedList);
         })
     }
     function showData (data) {
@@ -255,11 +255,15 @@ if(multiSection) {
         const resourceList = document.querySelector('.news-filter .multiFilter .multi-wrap .multi_filter_wrap');
         if(resourceList) {
             resourceList.addEventListener('click', function () {
+                console.log(this);
                 const list = this.querySelector('.list-wrap');
+                const arrow = this.querySelector('.arrow');
                 if(list.classList.contains('active')) {
                     list.classList.remove('active');
+                    arrow.classList.remove('rotate')
                 } else {
                     list.classList.add('active');
+                    arrow.classList.add('rotate')
                 }
             });
         }
