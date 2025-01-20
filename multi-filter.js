@@ -7,21 +7,43 @@ if(multiSection) {
         "visible": 2
     }
     let selectedList = [];
+    let wholeData = [];
+    let filtered = [];
     async function getData() {
         try {
             const response = await fetch('json/multiFilterData.json');
             if(response.status != 200) {
                 console.log("data is not fetch");
             }
-            const wholeData = await response.json();
+            wholeData = await response.json();
             showData(wholeData)
             showList(wholeData);
-            filterData(wholeData);
+            filterData(wholeData, selectedList);
         } catch (error) {
             console.error(error.message);
         }
     }
 
+
+
+    function clearFacet(data, filtered, selectedList) {
+
+        const clearBtn = document.querySelector('.news-filter .multiFilter .clear-btn p');
+        const list = document.querySelectorAll('.news-filter .multiFilter .list-wrap ul.list li input');
+
+        clearBtn.addEventListener('click', function () {
+            filtered = [];
+            data = wholeData;
+            selectedList = [];
+            list.forEach((item) => {
+               item.classList.remove('active');
+               item.checked = false
+            })
+            showData(data)
+            selectedListShow(selectedList);
+            filterData(data, selectedList)
+        })
+    }
     function showData (data) {
         const cardWrap = document.querySelector('.news-filter .card-wrapper');
         let wholeData = []
@@ -44,9 +66,9 @@ if(multiSection) {
         cardWrap.innerHTML = card;
     }
 
-    function filterData (data) {
+    function filterData (data, selectedList) {
         const list = document.querySelectorAll('.news-filter .multiFilter .list-wrap ul.list li input');
-        let filtered = [];
+        
         list.forEach((item) => {
             item.addEventListener('click', function () {
                 const liValue = this.value;
@@ -73,7 +95,6 @@ if(multiSection) {
                 } else {
                     this.classList.add('active')
                     selectedList.push(liValue);
-                    console.log(this.checked);
                     filtered = [];
                     data.forEach((item) => {
                         selectedList.forEach((seleList) => {
@@ -126,14 +147,10 @@ if(multiSection) {
             })
         })
     }
-     // 
-    // function clearFacet(data, filtered, selectedList) {
-    //     console.log(data);
-    // }
 
     function showList(data) {
         const listWrap = document.querySelector('.news-filter .multiFilter .multi-wrap .multi_filter_wrap ul.list');
-       const uniqueData = data.filter((item, index, self) => index === self.findIndex((t) => t.title === item.title))
+        const uniqueData = data.filter((item, index, self) => index === self.findIndex((t) => t.title === item.title))
         let liList = '';
         uniqueData.forEach((item) => {
             liList += `<li>
@@ -148,12 +165,6 @@ if(multiSection) {
         listWrap.innerHTML = liList;
     }
 
-
-    function clearFacet(data, filtered, selectedList) {
-        console.log(data);
-        console.log(filtered);
-        console.log(selectedList);
-    }
 
     function pagination (data, page, rows) {
         const paginationWrap = document.querySelector('.news-filter .pagination .paginationList');
@@ -250,7 +261,6 @@ if(multiSection) {
                 } else {
                     list.classList.add('active');
                 }
-                    
             });
         }
     }
