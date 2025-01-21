@@ -1,7 +1,7 @@
 const multiSection = document.querySelector('.news-filter');
 if(multiSection) {
 
-    const clearBtn = document.querySelector('.news-filter .multiFilter .clear-btn ');
+    const clearBtnShow = document.querySelector('.news-filter .multiFilter .clear-btn ');
     var obj = {
         "page": 1,
         "rows": 9,
@@ -45,7 +45,7 @@ if(multiSection) {
             filterData(data, selectedList);
             
 
-            clearBtn.style.display = 'none'
+            clearBtnShow.style.display = 'none'
         })
     }
     function showData (data) {
@@ -128,7 +128,7 @@ if(multiSection) {
                         </li>`;
         })
         if(selectedList.length > 0) {
-            clearBtn.style.display = 'block'
+            clearBtnShow.style.display = 'block'
         }
         selectedWrap.innerHTML = selectedHtml;
         crossSelected(selectedList);
@@ -258,19 +258,21 @@ if(multiSection) {
     }
 
     function filterListAcet () {
-        const resourceList = document.querySelector('.news-filter .multiFilter .multi-wrap .multi_filter_wrap');
+        const resourceList = document.querySelectorAll('.news-filter .multiFilter .multi-wrap .multi_filter_wrap');
         if(resourceList) {
-            resourceList.addEventListener('click', function () {
-                const list = this.querySelector('.list-wrap');
-                const arrow = this.querySelector('.arrow');
-                if(list.classList.contains('active')) {
-                    list.classList.remove('active');
-                    arrow.classList.remove('rotate')
-                } else {
-                    list.classList.add('active');
-                    arrow.classList.add('rotate')
-                }
-            });
+            resourceList.forEach((item) => {
+                item.addEventListener('click', function () {
+                    const list = this.querySelector('.list-wrap');
+                    const arrow = this.querySelector('.arrow');
+                    if(list.classList.contains('active')) {
+                        list.classList.remove('active');
+                        arrow.classList.remove('rotate')
+                    } else {
+                        list.classList.add('active');
+                        arrow.classList.add('rotate')
+                    }
+                });
+            })
         }
     }
 
@@ -281,7 +283,7 @@ if(multiSection) {
         crossSelected(selectedList);
 
         
-        clearBtn.style.display = 'none';
+        clearBtnShow.style.display = 'none';
     
     })
 
