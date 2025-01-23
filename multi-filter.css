@@ -27,6 +27,9 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.news-filter .multi-wrap .multi_filter_wrap.solution .list-wrap {
+  width: 300px;
+}
 .news-filter .multi-wrap .multi_filter_wrap .list-wrap {
   position: absolute;
   left: 50%;

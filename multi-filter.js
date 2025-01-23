@@ -30,13 +30,14 @@ if(multiSection) {
     function clearFacet(data, filtered, selectedList) {
 
         const clearBtn = document.querySelector('.news-filter .multiFilter .clear-btn p');
-        const list = document.querySelectorAll('.news-filter .multiFilter .list-wrap ul.list li input');
+        const Relist = document.querySelectorAll('.news-filter .multiFilter .multi_filter_wrap.resource .list-wrap ul.list li input');
+        const SoList = document.querySelectorAll('.news-filter .multiFilter .multi_filter_wrap.solution .list-wrap ul.list li input');
 
         clearBtn.addEventListener('click', function () {
             filtered = [];
             data = wholeData;
             selectedList = [];
-            list.forEach((item) => {
+            Relist.forEach((item) => {
                item.classList.remove('active');
                item.checked = false
             })
@@ -72,18 +73,40 @@ if(multiSection) {
 
     function filterData (data, selectedList) {
         const list = document.querySelectorAll('.news-filter .multiFilter .list-wrap ul.list li input');
-        
-        list.forEach((item) => {
-            item.addEventListener('click', function () {
-                const liValue = this.value;
-                if(this.classList.contains('active')) {
-                    this.classList.remove('active');
-                    selectedList = selectedList.filter(item => item !== liValue)
-                    filtered = [];
-                    if(selectedList.length > 0) {
+        const Relist = document.querySelectorAll('.news-filter .multiFilter .resource .list-wrap ul.list li input');
+        const SoList = document.querySelectorAll('.news-filter .multiFilter .solution .list-wrap ul.list li input');
+        console.log(Relist);
+        if(Relist.length > 0) {
+            Relist.forEach((item) => {
+                item.addEventListener('click', function () {
+                    const liValue = this.value;
+                    if(this.classList.contains('active')) {
+                        this.classList.remove('active');
+                        selectedList = selectedList.filter(item => item !== liValue)
+                        filtered = [];
+                        if(selectedList.length > 0) {
+                            data.forEach((item) => {
+                                selectedList.forEach((removeList) => {
+                                    if(item.content_type === removeList) {
+                                        filtered.push(item);
+                                    }
+                                })
+                            })
+                            selectedListShow(selectedList)
+                            showData(filtered);
+                            clearFacet(data, filtered, selectedList)
+                        } else {
+                            selectedListShow(selectedList)
+                            showData(data);
+                            clearFacet(data, filtered, selectedList)
+                        }
+                    } else {
+                        this.classList.add('active')
+                        selectedList.push(liValue);
+                        filtered = [];
                         data.forEach((item) => {
-                            selectedList.forEach((removeList) => {
-                                if(item.content_type === removeList) {
+                            selectedList.forEach((seleList) => {
+                                if(item.content_type === seleList) {
                                     filtered.push(item);
                                 }
                             })
@@ -91,29 +114,46 @@ if(multiSection) {
                         selectedListShow(selectedList)
                         showData(filtered);
                         clearFacet(data, filtered, selectedList)
-                    } else {
-                        selectedListShow(selectedList)
-                        showData(data);
-                        clearFacet(data, filtered, selectedList)
                     }
-                } else {
-                    this.classList.add('active')
-                    selectedList.push(liValue);
-                    filtered = [];
-                    data.forEach((item) => {
-                        selectedList.forEach((seleList) => {
-                            if(item.content_type === seleList) {
-                                filtered.push(item);
-                            }
-                        })
-                    })
-                    selectedListShow(selectedList)
-                    showData(filtered);
-                    clearFacet(data, filtered, selectedList)
-                }
+                })
             })
-        })
-       
+        }
+        if (SoList) {
+            SoList.forEach((item) => {
+                item.addEventListener('click', function () {
+                    const soListValue = this.value;
+                    if(this.classList.contains('active')) {
+                        this.classList.remove('active');
+                        selectedList = selectedList.filter((item) => item != soListValue);
+                        data.forEach((item) => {
+                            selectedList.forEach((selectItem) => {
+                                // console.log(selectItem);
+                                if(item.solution_type === selectItem || item.content_type === selectItem) {
+                                    filtered.push(soListValue);
+                                }
+                            })
+                        })
+                    } else {
+                        this.classList.add('active');
+                        filtered = [];
+                        selectedList.push(soListValue);
+                        data.forEach((item) => {
+                            selectedList.forEach((selectItem) => {
+                                if(item.solution_type === selectItem || item.content_type === selectItem) {
+                                    filtered.push(item);
+                                }
+                            })
+                        })
+                        const uniqueData = filtered.filter((itemdata, index, self) => index === self.findIndex((t) => t.id === itemdata.id))
+                        filtered = uniqueData;
+                        selectedListShow(selectedList)
+                        showData(filtered);
+                        clearFacet(data, filtered, selectedList)
+                        
+                    }
+                })
+            })
+        }
     }
 
     function selectedListShow(selectedList) {
@@ -156,19 +196,34 @@ if(multiSection) {
 
     function showList(data) {
         const listWrap = document.querySelector('.news-filter .multiFilter .multi-wrap .multi_filter_wrap ul.list');
-        const uniqueData = data.filter((item, index, self) => index === self.findIndex((t) => t.title === item.title))
-        let liList = '';
-        uniqueData.forEach((item) => {
-            liList += `<li>
+        const listWrapSolution = document.querySelector('.news-filter .multiFilter .multi-wrap .multi_filter_wrap.solution ul.list');
+        const resourceUniqueData = data.filter((item, index, self) => index === self.findIndex((t) => t.content_type === item.content_type))
+        const solutionUniqueData = data.filter((card, index, self) => index == self.findIndex((t) => t.solution_type === card.solution_type))
+        let reLiList = '';
+        let solLiList = '';
+        resourceUniqueData.forEach((item) => {
+            reLiList += `<li>
                         <div class="item">
-                            <label for="${item.id}">
-                                <input type="checkbox" value="${item.content_type}" id="${item.id}">
+                            <label for="re-${item.id}">
+                                <input type="checkbox" value="${item.content_type}" id="re-${item.id}">
                                 ${item.content_type}
                             </label>
                         </div>
                     </li>`;
         })
-        listWrap.innerHTML = liList;
+        solutionUniqueData.forEach((item) => {
+            solLiList += `<li>
+                <div class="item">
+                    <label for="so-${item.id}">
+                        <input type="checkbox" value="${item.solution_type}" id="so-${item.id}">
+                        ${item.solution_type}
+                    </label>
+                </div>
+            </li>`;
+        })
+        listWrap.innerHTML = reLiList;
+        listWrapSolution.innerHTML = solLiList;
+
     }
 
 
@@ -257,6 +312,7 @@ if(multiSection) {
         }
     }
 
+
     function filterListAcet () {
         const resourceList = document.querySelectorAll('.news-filter .multiFilter .multi-wrap .multi_filter_wrap');
         if(resourceList) {
@@ -268,8 +324,14 @@ if(multiSection) {
                         list.classList.remove('active');
                         arrow.classList.remove('rotate')
                     } else {
+                        resourceList.forEach((items) => {
+                            const listWrap = items.querySelector('.list-wrap');
+                            const listArrow = items.querySelector('.arrow');
+                            listWrap.classList.remove('active')
+                            listArrow.classList.remove('rotate');
+                        })
                         list.classList.add('active');
-                        arrow.classList.add('rotate')
+                        arrow.classList.add('rotate');
                     }
                 });
             })
@@ -288,19 +350,15 @@ if(multiSection) {
 
 
     document.addEventListener('click', function (e) {
-        console.log(e.target);
         const filterWrap = document.querySelectorAll('.news-filter .multiFilter .multi-wrap .multi_filter_wrap p');
         const filterWrapper = document.querySelectorAll('.news-filter .multiFilter .multi-wrap .multi_filter_wrap');
-        console.log(filterWrap);
         filterWrap.forEach((item) => {
-            console.log(item);
             if(e.target !== item) {
-                // filterWrapper.querySelector
-                console.log(item);
+                // filterWrapper.querySelectors
                 filterWrapper.forEach((filterItem) => {
-                    console.log(filterItem);
-                    let listWrap = filterWrapper.querySelector('.list-wrap');
-                    let arrow = filterWrapper.querySelector('.arrow');
+                    let listWrap = filterItem.querySelector('.list-wrap');
+                    let arrow = filterItem.querySelector('.arrow');
+                    // console.log(listWrap);
                 })
                 // console.log(listWrap);
                 // console.log(arrow);

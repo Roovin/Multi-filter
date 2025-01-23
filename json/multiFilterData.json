@@ -2,6 +2,8 @@
     {
         "id": 1,
         "content_type": "Application Notes",
+        "solution_type": "5G",
+        "solution_title": "",
         "title": "Application Notes",
         "img": "images/newsFilter/characterizing.png",
         "alt": "blog",
@@ -10,6 +12,8 @@
     {
         "id": 2,
         "content_type": "Guides & Manuals",
+        "solution_type": "Aerospace & Defense",
+        "solution_title": "",
         "title": "Guides & Manuals",
         "img": "images/newsFilter/AstroNova.png",
         "alt": "burtonbands",
@@ -18,6 +22,8 @@
     {
         "id": 3,
         "content_type": "Spec & Data Sheet",
+        "solution_type": "Automotive Test Equipment",
+        "solution_title": "",
         "title": "Spec & Data Sheet",
         "img": "images/newsFilter/cxl.png",
         "alt": "dry-tips",
@@ -26,6 +32,8 @@
     {
         "id": 4,
         "content_type": "Ebook",
+        "solution_type": "Electrical And Industrial",
+        "solution_title": "",
         "title": "Ebook",
         "img": "images/newsFilter/ebook-tower.png",
         "alt": "linden",
@@ -34,6 +42,8 @@
     {
         "id": 5,
         "content_type": "White Papers",
+        "solution_type": "Internet Of Things (IoT)",
+        "solution_title": "",
         "title": "White Papers",
         "img": "images/newsFilter/arbitrary.png",
         "alt": "oral",
@@ -42,6 +52,8 @@
     {
         "id": 6,
         "content_type": "Spec & Data Sheet",
+        "solution_type": "RF & Microwave",
+        "solution_title": "",
         "title": "Spec & Data Sheet",
         "img": "images/newsFilter/spec-data.png",
         "alt": "prior",
@@ -50,6 +62,8 @@
     {
         "id": 7,
         "content_type": "White Papers",
+        "solution_type": "Serial Design & Debug",
+        "solution_title": "",
         "title": "White Papers",
         "img": "images/newsFilter/manage-network.png",
         "alt": "salvin",
@@ -58,6 +72,8 @@
     {
         "id": 8,
         "content_type": "Ebook",
+        "solution_type": "Wireless Install & Maintenance",
+        "solution_title": "",
         "title": "Ebook",
         "img": "images/newsFilter/beyond.png",
         "alt": "smartSelect",
@@ -66,6 +82,8 @@
     {
         "id": 9,
         "content_type": "Application Notes",
+        "solution_type": "Wireline/Fiber Install & Maintenance",
+        "solution_title": "",
         "title": "Application Notes",
         "img": "images/newsFilter/compilance-software.png",
         "alt": "takla-man",
@@ -74,6 +92,8 @@
     {
         "id": 10,
         "content_type": "Guides & Manuals",
+        "solution_type": "5G",
+        "solution_title": "",
         "title": "Guides & Manuals",
         "img": "images/newsFilter/agilent.png",
         "alt": "vara",
@@ -82,6 +102,8 @@
     {
         "id": 11,
         "content_type": "Application Notes",
+        "solution_type": "Aerospace & Defense",
+        "solution_title": "",
         "title": "Application Notes",
         "img": "images/newsFilter/textronix.png",
         "alt": "blog",
@@ -90,6 +112,8 @@
     {
         "id": 12,
         "content_type": "Guides & Manuals",
+        "solution_type": "Automotive Test Equipment",
+        "solution_title": "",
         "title": "Guides & Manuals",
         "img": "images/newsFilter/agilent-2.png",
         "alt": "burtonbands",
@@ -98,6 +122,8 @@
     {
         "id": 13,
         "content_type": "Spec & Data Sheet",
+        "solution_type": "Electrical And Industrial",
+        "solution_title": "",
         "title": "Spec & Data Sheet",
         "img": "images/newsFilter/spec-data.png",
         "alt": "dry-tips",
@@ -106,6 +132,8 @@
     {
         "id": 14,
         "content_type": "Ebook",
+        "solution_type": "Internet Of Things (IoT)",
+        "solution_title": "",
         "title": "Ebook",
         "img": "images/newsFilter/Engineering.png",
         "alt": "linden",
@@ -114,6 +142,8 @@
     {
         "id": 15,
         "content_type": "White Papers",
+        "solution_type": "RF & Microwave",
+        "solution_title": "",
         "title": "White Papers",
         "img": "images/newsFilter/winning.png",
         "alt": "oral",
@@ -122,6 +152,8 @@
     {
         "id": 16,
         "content_type": "Spec & Data Sheet",
+        "solution_type": "Serial Design & Debug",
+        "solution_title": "",
         "title": "Spec & Data Sheet",
         "img": "images/newsFilter/spec-data.png",
         "alt": "prior",
@@ -130,6 +162,8 @@
     {
         "id": 17,
         "content_type": "White Papers",
+        "solution_type": "Wireless Install & Maintenance",
+        "solution_title": "",
         "title": "White Papers",
         "img": "images/newsFilter/winning.png",
         "alt": "salvin",
@@ -138,6 +172,8 @@
     {
         "id": 18,
         "content_type": "Ebook",
+        "solution_type": "Wireline/Fiber Install & Maintenance",
+        "solution_title": "",
         "title": "Ebook",
         "img": "images/newsFilter/ebook.png",
         "alt": "smartSelect",
@@ -146,6 +182,8 @@
     {
         "id": 19,
         "content_type": "Application Notes",
+        "solution_type": "5G",
+        "solution_title": "",
         "title": "Application Notes",
         "img": "images/newsFilter/keysight.png",
         "alt": "takla-man",
@@ -154,6 +192,8 @@
     {
         "id": 20,
         "content_type": "Guides & Manuals",
+        "solution_type": "Aerospace & Defense",
+        "solution_title": "",
         "title": "Guides & Manuals",
         "img": "images/newsFilter/errata.png",
         "alt": "vara",
@@ -162,6 +202,8 @@
     {
         "id": 21,
         "content_type": "Application Notes",
+        "solution_type": "Automotive Test Equipment",
+        "solution_title": "",
         "title": "Application Notes",
         "img": "images/newsFilter/teledyne.jpeg",
         "alt": "blog",
@@ -170,6 +212,8 @@
     {
         "id": 22,
         "content_type": "Guides & Manuals",
+        "solution_type": "Electrical And Industrial",
+        "solution_title": "",
         "title": "Guides & Manuals",
         "img": "images/newsFilter/noiseFIlgurmeter.png",
         "alt": "burtonbands",
@@ -178,6 +222,8 @@
     {
         "id": 23,
         "content_type": "Spec & Data Sheet",
+        "solution_type": "Internet Of Things (IoT)",
+        "solution_title": "",
         "title": "Spec & Data Sheet",
         "img": "images/newsFilter/spec-data.png",
         "alt": "dry-tips",
@@ -186,6 +232,8 @@
     {
         "id": 24,
         "content_type": "Ebook",
+        "solution_type": "RF & Microwave",
+        "solution_title": "",
         "title": "Ebook",
         "img": "images/newsFilter/ebook.png",
         "alt": "linden",
@@ -194,6 +242,8 @@
     {
         "id": 25,
         "content_type": "White Papers",
+        "solution_type": "Serial Design & Debug",
+        "solution_title": "",
         "title": "White Papers",
         "img": "images/newsFilter/color-red-circle.png",
         "alt": "oral",
