@@ -41,6 +41,10 @@ if(multiSection) {
                item.classList.remove('active');
                item.checked = false
             })
+            SoList.forEach((soItem) => {
+                soItem.classList.remove('active');
+                soItem.checked = false
+            })
             showData(data)
             selectedListShow(selectedList);
             filterData(data, selectedList);
@@ -75,7 +79,6 @@ if(multiSection) {
         const list = document.querySelectorAll('.news-filter .multiFilter .list-wrap ul.list li input');
         const Relist = document.querySelectorAll('.news-filter .multiFilter .resource .list-wrap ul.list li input');
         const SoList = document.querySelectorAll('.news-filter .multiFilter .solution .list-wrap ul.list li input');
-        console.log(Relist);
         if(Relist.length > 0) {
             Relist.forEach((item) => {
                 item.addEventListener('click', function () {
@@ -87,7 +90,7 @@ if(multiSection) {
                         if(selectedList.length > 0) {
                             data.forEach((item) => {
                                 selectedList.forEach((removeList) => {
-                                    if(item.content_type === removeList) {
+                                    if(item.content_type === removeList || item.solution_type === removeList) {
                                         filtered.push(item);
                                     }
                                 })
@@ -106,11 +109,12 @@ if(multiSection) {
                         filtered = [];
                         data.forEach((item) => {
                             selectedList.forEach((seleList) => {
-                                if(item.content_type === seleList) {
+                                if(item.content_type === seleList || item.solution_type === seleList) {
                                     filtered.push(item);
                                 }
                             })
                         })
+                        filtered = filtered.filter((filItem, index, self) => index === self.findIndex((t) => t.id === filItem.id))
                         selectedListShow(selectedList)
                         showData(filtered);
                         clearFacet(data, filtered, selectedList)
@@ -121,18 +125,24 @@ if(multiSection) {
         if (SoList) {
             SoList.forEach((item) => {
                 item.addEventListener('click', function () {
+                    console.log(this);
                     const soListValue = this.value;
                     if(this.classList.contains('active')) {
                         this.classList.remove('active');
                         selectedList = selectedList.filter((item) => item != soListValue);
-                        data.forEach((item) => {
-                            selectedList.forEach((selectItem) => {
-                                // console.log(selectItem);
-                                if(item.solution_type === selectItem || item.content_type === selectItem) {
-                                    filtered.push(soListValue);
-                                }
+                        filtered = [];
+                        if(selectedList.length > 0) {
+                            data.forEach((item) => {
+                                selectedList.forEach((selectItem) => {
+                                    if(item.solution_type === selectItem || item.content_type === selectItem) {
+                                        filtered.push(soListValue);
+                                    }
+                                })
                             })
-                        })
+                        }
+                        selectedListShow(selectedList)
+                        showData(filtered);
+                        clearFacet(data, filtered, selectedList)
                     } else {
                         this.classList.add('active');
                         filtered = [];
@@ -175,20 +185,33 @@ if(multiSection) {
     }
   
     function crossSelected (selectedList) {
-        const list = document.querySelectorAll('.news-filter .multiFilter .list-wrap ul.list li input');
+        const Relist = document.querySelectorAll('.news-filter .multiFilter .resource .list-wrap ul.list li input');
+        const Solist = document.querySelectorAll('.news-filter .multiFilter .solution .list-wrap ul.list li input');
         const selectedWrapLi = document.querySelectorAll('.news-filter .selectedWrap ul li');
         const selectedWrap = document.querySelector('.news-filter .selectedWrap ul');
         selectedWrapLi.forEach((item) => {
             item.addEventListener('click', function () {
                 const selValue = this.querySelector('.selected-item p').innerText;
-                list.forEach((inputItem) => {
-                    const inVlaue = inputItem.value;
-                        if(inVlaue === selValue) {
-                            selectedList = selectedList.filter(selItem => selItem !== selValue);
-
-                            inputItem.click(); //click trigger
-                        }
-                })
+                if(Relist) {
+                    Relist.forEach((inputItem) => {
+                        const inVlaue = inputItem.value;
+                            if(inVlaue === selValue) {
+                                selectedList = selectedList.filter(selItem => selItem !== selValue);
+    
+                                inputItem.click(); //click trigger
+                            }
+                    })
+                }
+                if(Solist) {
+                    Solist.forEach((inputItem) => {
+                        const inVlaue = inputItem.value;
+                            if(inVlaue === selValue) {
+                                selectedList = selectedList.filter(selItem => selItem !== selValue);
+    
+                                inputItem.click(); //click trigger
+                            }
+                    })
+                }
                 selectedListShow(selectedList)
             })
         })
