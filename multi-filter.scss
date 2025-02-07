@@ -9,13 +9,35 @@
         .clear-btn {
             position: relative;
             cursor: pointer;
+            margin-left: 10px;
+        }
+        .searchWrap {
+            position: relative;
+            width: 200px;
+            form {
+                width: 100%;
+                .search {
+                    width: 100%;
+                }
+                input {
+                    width: 100%;
+                    padding: 13px 5px;
+                    border: solid 1px #000;
+                    border-radius: 4px;
+                    &:focus {
+                        outline: none;
+                        border: solid 1px #000;
+
+                    }
+                }
+            }
         }
     }
     .multi-wrap {
         position: relative;
         display: flex;
         align-items: center;
-        width: 100%;
+        width: calc(100% - 200px);
         .multi_filter_wrap {
             position: relative;
             width: 200px;

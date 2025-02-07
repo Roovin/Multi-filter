@@ -11,12 +11,33 @@
 .news-filter .multiFilter .clear-btn {
   position: relative;
   cursor: pointer;
+  margin-left: 10px;
+}
+.news-filter .multiFilter .searchWrap {
+  position: relative;
+  width: 200px;
+}
+.news-filter .multiFilter .searchWrap form {
+  width: 100%;
+}
+.news-filter .multiFilter .searchWrap form .search {
+  width: 100%;
+}
+.news-filter .multiFilter .searchWrap form input {
+  width: 100%;
+  padding: 13px 5px;
+  border: solid 1px #000;
+  border-radius: 4px;
+}
+.news-filter .multiFilter .searchWrap form input:focus {
+  outline: none;
+  border: solid 1px #000;
 }
 .news-filter .multi-wrap {
   position: relative;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: calc(100% - 200px);
 }
 .news-filter .multi-wrap .multi_filter_wrap {
   position: relative;

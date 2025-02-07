@@ -45,12 +45,14 @@ if(multiSection) {
                 soItem.classList.remove('active');
                 soItem.checked = false
             })
-            showData(data)
-            selectedListShow(selectedList);
-            filterData(data, selectedList);
-            
 
             clearBtnShow.style.display = 'none'
+                showData(data)
+                selectedListShow(selectedList);
+                filterData(data, selectedList);
+
+
+            
         })
     }
     function showData (data) {
