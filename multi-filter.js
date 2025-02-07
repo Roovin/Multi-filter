@@ -77,10 +77,10 @@ if(multiSection) {
 
     function filterData (data, selectedList) {
         const list = document.querySelectorAll('.news-filter .multiFilter .list-wrap ul.list li input');
-        const Relist = document.querySelectorAll('.news-filter .multiFilter .resource .list-wrap ul.list li input');
-        const SoList = document.querySelectorAll('.news-filter .multiFilter .solution .list-wrap ul.list li input');
-        if(Relist.length > 0) {
-            Relist.forEach((item) => {
+        // const Relist = document.querySelectorAll('.news-filter .multiFilter .resource .list-wrap ul.list li input');
+        // const SoList = document.querySelectorAll('.news-filter .multiFilter .solution .list-wrap ul.list li input');
+        if(list.length > 0) {
+            list.forEach((item) => {
                 item.addEventListener('click', function () {
                     const liValue = this.value;
                     if(this.classList.contains('active')) {
@@ -122,7 +122,7 @@ if(multiSection) {
                 })
             })
         }
-        if (SoList) {
+        if (SoList.length > 0) {
             SoList.forEach((item) => {
                 item.addEventListener('click', function () {
                     console.log(this);
@@ -187,13 +187,14 @@ if(multiSection) {
     function crossSelected (selectedList) {
         const Relist = document.querySelectorAll('.news-filter .multiFilter .resource .list-wrap ul.list li input');
         const Solist = document.querySelectorAll('.news-filter .multiFilter .solution .list-wrap ul.list li input');
+        const list = document.querySelectorAll('.news-filter .multiFilter .list-wrap ul.list li input');
         const selectedWrapLi = document.querySelectorAll('.news-filter .selectedWrap ul li');
         const selectedWrap = document.querySelector('.news-filter .selectedWrap ul');
         selectedWrapLi.forEach((item) => {
             item.addEventListener('click', function () {
                 const selValue = this.querySelector('.selected-item p').innerText;
-                if(Relist) {
-                    Relist.forEach((inputItem) => {
+                if(list) {
+                    list.forEach((inputItem) => {
                         const inVlaue = inputItem.value;
                             if(inVlaue === selValue) {
                                 selectedList = selectedList.filter(selItem => selItem !== selValue);
@@ -202,16 +203,17 @@ if(multiSection) {
                             }
                     })
                 }
-                if(Solist) {
-                    Solist.forEach((inputItem) => {
-                        const inVlaue = inputItem.value;
-                            if(inVlaue === selValue) {
-                                selectedList = selectedList.filter(selItem => selItem !== selValue);
+                // if(Solist) {
+                //     Solist.forEach((inputItem) => {
+                //         const inVlaue = inputItem.value;
+                //             if(inVlaue === selValue) {
+                //                 selectedList = selectedList.filter(selItem => selItem !== selValue);
     
-                                inputItem.click(); //click trigger
-                            }
-                    })
-                }
+                //                 inputItem.click(); //click trigger
+                //             }
+                //     })
+                // }
+                console.log(selectedList);
                 selectedListShow(selectedList)
             })
         })
