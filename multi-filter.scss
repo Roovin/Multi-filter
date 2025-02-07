@@ -21,9 +21,11 @@
                 }
                 input {
                     width: 100%;
-                    padding: 13px 5px;
+                    padding: 5px;
                     border: solid 1px #000;
                     border-radius: 4px;
+                    height: 43px;
+                    font-size: 20px;
                     &:focus {
                         outline: none;
                         border: solid 1px #000;

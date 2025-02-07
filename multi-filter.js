@@ -20,6 +20,7 @@ if(multiSection) {
             showData(wholeData)
             showList(wholeData);
             filterData(wholeData, selectedList);
+            searchFacet(wholeData);
         } catch (error) {
             console.error(error.message);
         }
@@ -47,12 +48,9 @@ if(multiSection) {
             })
 
             clearBtnShow.style.display = 'none'
-                showData(data)
-                selectedListShow(selectedList);
-                filterData(data, selectedList);
-
-
-            
+            showData(data)
+            selectedListShow(selectedList);
+            filterData(data, selectedList);
         })
     }
     function showData (data) {
@@ -124,48 +122,48 @@ if(multiSection) {
                 })
             })
         }
-        if (SoList.length > 0) {
-            SoList.forEach((item) => {
-                item.addEventListener('click', function () {
-                    console.log(this);
-                    const soListValue = this.value;
-                    if(this.classList.contains('active')) {
-                        this.classList.remove('active');
-                        selectedList = selectedList.filter((item) => item != soListValue);
-                        filtered = [];
-                        if(selectedList.length > 0) {
-                            data.forEach((item) => {
-                                selectedList.forEach((selectItem) => {
-                                    if(item.solution_type === selectItem || item.content_type === selectItem) {
-                                        filtered.push(soListValue);
-                                    }
-                                })
-                            })
-                        }
-                        selectedListShow(selectedList)
-                        showData(filtered);
-                        clearFacet(data, filtered, selectedList)
-                    } else {
-                        this.classList.add('active');
-                        filtered = [];
-                        selectedList.push(soListValue);
-                        data.forEach((item) => {
-                            selectedList.forEach((selectItem) => {
-                                if(item.solution_type === selectItem || item.content_type === selectItem) {
-                                    filtered.push(item);
-                                }
-                            })
-                        })
-                        const uniqueData = filtered.filter((itemdata, index, self) => index === self.findIndex((t) => t.id === itemdata.id))
-                        filtered = uniqueData;
-                        selectedListShow(selectedList)
-                        showData(filtered);
-                        clearFacet(data, filtered, selectedList)
+        // if (SoList.length > 0) {
+        //     SoList.forEach((item) => {
+        //         item.addEventListener('click', function () {
+        //             console.log(this);
+        //             const soListValue = this.value;
+        //             if(this.classList.contains('active')) {
+        //                 this.classList.remove('active');
+        //                 selectedList = selectedList.filter((item) => item != soListValue);
+        //                 filtered = [];
+        //                 if(selectedList.length > 0) {
+        //                     data.forEach((item) => {
+        //                         selectedList.forEach((selectItem) => {
+        //                             if(item.solution_type === selectItem || item.content_type === selectItem) {
+        //                                 filtered.push(soListValue);
+        //                             }
+        //                         })
+        //                     })
+        //                 }
+        //                 selectedListShow(selectedList)
+        //                 showData(filtered);
+        //                 clearFacet(data, filtered, selectedList)
+        //             } else {
+        //                 this.classList.add('active');
+        //                 filtered = [];
+        //                 selectedList.push(soListValue);
+        //                 data.forEach((item) => {
+        //                     selectedList.forEach((selectItem) => {
+        //                         if(item.solution_type === selectItem || item.content_type === selectItem) {
+        //                             filtered.push(item);
+        //                         }
+        //                     })
+        //                 })
+        //                 const uniqueData = filtered.filter((itemdata, index, self) => index === self.findIndex((t) => t.id === itemdata.id))
+        //                 filtered = uniqueData;
+        //                 selectedListShow(selectedList)
+        //                 showData(filtered);
+        //                 clearFacet(data, filtered, selectedList)
                         
-                    }
-                })
-            })
-        }
+        //             }
+        //         })
+        //     })
+        // }
     }
 
     function selectedListShow(selectedList) {
@@ -365,12 +363,20 @@ if(multiSection) {
         }
     }
 
+    function searchFacet(data) {
+        console.log(data);
+        const searchInput = document.querySelector('.news-filter .multiFilter .searchWrap form input');
+        searchInput.addEventListener('keyup', function () {
+            console.log(this);
+        })
+    }
+
 
     document.addEventListener('DOMContentLoaded', function () {
         getData();
         filterListAcet();
         crossSelected(selectedList);
-
+        
         clearBtnShow.style.display = 'none';
     
     })
