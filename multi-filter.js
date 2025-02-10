@@ -26,10 +26,7 @@ if(multiSection) {
         }
     }
 
-
-
     function clearFacet(data, filtered, selectedList) {
-
         const clearBtn = document.querySelector('.news-filter .multiFilter .clear-btn p');
         const Relist = document.querySelectorAll('.news-filter .multiFilter .multi_filter_wrap.resource .list-wrap ul.list li input');
         const SoList = document.querySelectorAll('.news-filter .multiFilter .multi_filter_wrap.solution .list-wrap ul.list li input');
@@ -77,8 +74,6 @@ if(multiSection) {
 
     function filterData (data, selectedList) {
         const list = document.querySelectorAll('.news-filter .multiFilter .list-wrap ul.list li input');
-        // const Relist = document.querySelectorAll('.news-filter .multiFilter .resource .list-wrap ul.list li input');
-        // const SoList = document.querySelectorAll('.news-filter .multiFilter .solution .list-wrap ul.list li input');
         if(list.length > 0) {
             list.forEach((item) => {
                 item.addEventListener('click', function () {
@@ -122,48 +117,6 @@ if(multiSection) {
                 })
             })
         }
-        // if (SoList.length > 0) {
-        //     SoList.forEach((item) => {
-        //         item.addEventListener('click', function () {
-        //             console.log(this);
-        //             const soListValue = this.value;
-        //             if(this.classList.contains('active')) {
-        //                 this.classList.remove('active');
-        //                 selectedList = selectedList.filter((item) => item != soListValue);
-        //                 filtered = [];
-        //                 if(selectedList.length > 0) {
-        //                     data.forEach((item) => {
-        //                         selectedList.forEach((selectItem) => {
-        //                             if(item.solution_type === selectItem || item.content_type === selectItem) {
-        //                                 filtered.push(soListValue);
-        //                             }
-        //                         })
-        //                     })
-        //                 }
-        //                 selectedListShow(selectedList)
-        //                 showData(filtered);
-        //                 clearFacet(data, filtered, selectedList)
-        //             } else {
-        //                 this.classList.add('active');
-        //                 filtered = [];
-        //                 selectedList.push(soListValue);
-        //                 data.forEach((item) => {
-        //                     selectedList.forEach((selectItem) => {
-        //                         if(item.solution_type === selectItem || item.content_type === selectItem) {
-        //                             filtered.push(item);
-        //                         }
-        //                     })
-        //                 })
-        //                 const uniqueData = filtered.filter((itemdata, index, self) => index === self.findIndex((t) => t.id === itemdata.id))
-        //                 filtered = uniqueData;
-        //                 selectedListShow(selectedList)
-        //                 showData(filtered);
-        //                 clearFacet(data, filtered, selectedList)
-                        
-        //             }
-        //         })
-        //     })
-        // }
     }
 
     function selectedListShow(selectedList) {
@@ -248,9 +201,7 @@ if(multiSection) {
         })
         listWrap.innerHTML = reLiList;
         listWrapSolution.innerHTML = solLiList;
-
     }
-
 
     function pagination (data, page, rows) {
         const paginationWrap = document.querySelector('.news-filter .pagination .paginationList');
@@ -374,8 +325,6 @@ if(multiSection) {
         })
     }
     
-
-
     document.addEventListener('DOMContentLoaded', function () {
         getData();
         filterListAcet();
@@ -385,25 +334,17 @@ if(multiSection) {
     
     })
 
-
     document.addEventListener('click', function (e) {
         const filterWrap = document.querySelectorAll('.news-filter .multiFilter .multi-wrap .multi_filter_wrap p');
         const filterWrapper = document.querySelectorAll('.news-filter .multiFilter .multi-wrap .multi_filter_wrap');
         filterWrap.forEach((item) => {
             if(e.target !== item) {
-                // filterWrapper.querySelectors
                 filterWrapper.forEach((filterItem) => {
                     let listWrap = filterItem.querySelector('.list-wrap');
                     let arrow = filterItem.querySelector('.arrow');
-                    // console.log(listWrap);
                 })
-                // console.log(listWrap);
-                // console.log(arrow);
-                // listWrap.classList.remove('active');
-                // arrow.classList.remove('rotate');
             }
         })
-        // if(e.target === )
     })
 
 }
