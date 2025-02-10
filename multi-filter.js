@@ -364,12 +364,16 @@ if(multiSection) {
     }
 
     function searchFacet(data) {
-        console.log(data);
         const searchInput = document.querySelector('.news-filter .multiFilter .searchWrap form input');
         searchInput.addEventListener('keyup', function () {
-            console.log(this);
+            const query = this.value.toLowerCase();
+            let filteredResults = data.filter(item => 
+                item.title.toLowerCase().includes(query)
+            )
+            showData(filteredResults)
         })
     }
+    
 
 
     document.addEventListener('DOMContentLoaded', function () {
