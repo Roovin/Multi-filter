@@ -51,11 +51,12 @@ if(multiSection) {
         })
     }
     function showData (data) {
+        console.log(data);
         const cardWrap = document.querySelector('.news-filter .card-wrapper');
         let wholeData = []
         const responsePage = pagination(data, obj.page, obj.rows);
         wholeData = responsePage.newsdata;
-        
+        console.log(wholeData);
         let card = [];
         wholeData.forEach((item) => {
              card += `<div class="card">
@@ -110,6 +111,7 @@ if(multiSection) {
                             })
                         })
                         filtered = filtered.filter((filItem, index, self) => index === self.findIndex((t) => t.id === filItem.id))
+                        console.log(filtered);
                         selectedListShow(selectedList)
                         showData(filtered);
                         clearFacet(data, filtered, selectedList)
