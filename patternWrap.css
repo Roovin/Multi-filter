@@ -2,6 +2,9 @@
   position: relative;
   padding: 120px 0;
 }
-.patternWarp .right-star-pattern {
+.patternWarp .space {
+  margin-right: 10px;
+}
+.patternWarp h2 {
   margin: 20px 0;
 }/*# sourceMappingURL=patternWrap.css.map */
