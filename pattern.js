@@ -132,16 +132,47 @@ if(sectionWrap) {
     const paraTrianglePattern = sectionWrap.querySelector('.paramid-triangle-pattern');
     if(paraTrianglePattern) {
         let paraTriangle = ""
-        for(let i = 1; i < 8; i++) {
-            for(let j = i+1; j <= 6; j++) {
-                paraTriangle += `<span class="space"></span>`
+        for(let i = 1; i < 6; i++) {
+            for(let j = i; j < 6; j++) {
+                paraTriangle += `<span class="space"></span>
+                <span class="space"></span>`
             }
-            for(let k = i*2; k <= 8; k++) {
-                paraTriangle += `<span>*</span>
+            for(let k = 1; k <= (i*2)-1; k++) {
+                paraTriangle += `
+                                <span>*</span>
                                 <span class="space"></span>`
             }
             paraTriangle += `</br>`;
         } 
         paraTrianglePattern.innerHTML = paraTriangle
+    }
+
+    //Right Triangle Pattern
+    const rightTrianglePattern = sectionWrap.querySelector('.right-triangle-pattern');
+    if(rightTrianglePattern) {
+        let rightTriangle = "";
+        for(let i = 0; i < 5; i++) {
+            for(let j = i+1; j < 5; j++) {
+                rightTriangle += `<span class="space"></span>`;
+            }
+            for(let k = 0; k <= i; k++) {
+                rightTriangle += `<span>*</span>
+                            <span></span>`;
+            }
+            rightTriangle += `</br>`;
+        }
+        for(let l = 0; l < 5; l++) {
+            for(let h = 0; h <= l; h++) {
+                rightTriangle += `<span class="space"></span>`;
+            }
+            for(let m = l+1; m < 5; m++) {
+                rightTriangle += `<span>*</span>
+                                <span></span>`;
+            }
+            rightTriangle += `</br>`;
+        }
+
+        rightTrianglePattern.innerHTML = rightTriangle
+
     }
 }
