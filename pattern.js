@@ -175,4 +175,44 @@ if(sectionWrap) {
         rightTrianglePattern.innerHTML = rightTriangle
 
     }
+
+
+    //Alphabet Star Pattern
+    const alphabetPattern = sectionWrap.querySelector('.alphabet-pattern');
+    if(alphabetPattern) { 
+        let alpStar = "";
+        // for (var i = 0; i < 7; i++) {
+		// 	for (var j = 0 ; j < 5; j++) {
+		// 		if (j == 0 && i != 0 || j == 4 && i != 0 || i == 0 && j != 0 && j != 4 || i == 3) {
+        //             alpStar += `<span>*</span>
+        //             <span></span>`;
+		// 		} else {
+        //             alpStar += `<span></span>`;
+		// 		}
+        //         alpStar += `</br>`;
+		// 	}
+            
+		// }
+        for (var i = 0; i < 7; i++) {
+			for (var j = 0; j < 5; j++) {
+				if (j == 0 && i != 0 ) {
+                    alpStar += `<span>*</span>
+                              <span></span>`;
+				} else if(j == 4 && i != 0) {
+                    alpStar += `<span>*</span>
+                    <span></span>`;
+				} else if(i == 0 && j != 0 && j != 4) {
+                    alpStar += `<span>*</span>
+                    <span></span>`;
+                } else if(i == 3) {
+                    alpStar += `<span>*</span>
+                    <span></span>`;
+                } else {
+                    alpStar += `<span class="space"></span>`;
+                }
+			}
+            alpStar += `</br>`;
+		}
+        alphabetPattern.innerHTML = alpStar;
+    }
 }
